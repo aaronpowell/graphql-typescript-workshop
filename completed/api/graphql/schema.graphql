@@ -1,0 +1,63 @@
+enum GameState {
+  WaitingForPlayers
+  Started
+  Completed
+}
+
+type Question {
+  id: ID!
+  question: String!
+  correctAnswer: String!
+  answers: [String!]!
+}
+
+type Answer {
+  answer: String!
+  question: Question!
+}
+
+type Player {
+  id: ID!
+  name: String!
+  game(gameId: ID): Game!
+  games: [Game!]!
+}
+
+type Game {
+  id: ID!
+  state: GameState
+  players: [Player!]!
+  questions: [Question!]!
+}
+
+type PlayerResult {
+  name: String!
+  question: String!
+  submittedAnswer: String!
+  correctAnswer: String!
+  answers: [String!]!
+  correct: Boolean
+}
+
+type Query {
+  game(id: ID!): Game
+  games: [Game!]!
+  playerResults(gameId: ID!, playerId: ID!): [PlayerResult!]!
+}
+
+type Mutation {
+  createGame: Game
+  addPlayerToGame(id: ID!, name: String!): Player!
+  startGame(id: ID!): Game
+  submitAnswer(
+    gameId: ID!
+    playerId: ID!
+    questionId: ID!
+    answer: String!
+  ): Player
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
