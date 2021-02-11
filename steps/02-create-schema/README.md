@@ -133,7 +133,15 @@ schema {
 }
 ```
 
-Now when we run our application and open up the GraphQL playground, we can inspect our more complex schema.
+And now we need to remove the old resolver from `graphql/index.ts`, we'll just have an empty query for now:
+
+```typescript
+const resolvers = {
+  Query: {},
+};
+```
+
+Now when we run our application and open up the GraphQL playground, we can inspect our more complex schema. You can also write queries against the new schema, but you'll find that you get errors because our resolvers aren't implemented.
 
 ## Running The Application
 
