@@ -11,11 +11,6 @@ type Question {
   answers: [String!]!
 }
 
-type Answer {
-  answer: String!
-  question: Question!
-}
-
 type Player {
   id: ID!
   name: String!
