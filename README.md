@@ -4,7 +4,7 @@ This repository contains the exercises for my [Type-safe GraphQL apps with TypeS
 
 ## Undertaking the workshop
 
-The workshop is designed to be instructor-led, so if you would like to participate in it contact me via the [info on my GitHub profile](https://github.com/aaronpowell). But it can be a self-directed workshop, with the guides being within the [`instructions`](instructions) folder.
+The workshop is designed to be instructor-led, so if you would like to participate in it contact me via the [info on my GitHub profile](https://github.com/aaronpowell). But it can be a self-directed workshop, with the guides being within the [`steps`](steps) folder.
 
 ## Prerequisites
 
