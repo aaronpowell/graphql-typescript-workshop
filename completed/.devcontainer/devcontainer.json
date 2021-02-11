@@ -15,7 +15,6 @@
     "ms-azuretools.vscode-azurefunctions",
     "ms-azuretools.vscode-azurestaticwebapps",
     "dbaeumer.vscode-eslint",
-    "ritwickdey.liveserver",
     "apollographql.vscode-apollo",
     "esbenp.prettier-vscode"
   ],
