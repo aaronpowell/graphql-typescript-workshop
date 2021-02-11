@@ -29,7 +29,7 @@ $> npm install --save graphql-import
 Now we can remove the embedded schema are load it up. Update the `api/graphql/index.ts` file to do that:
 
 ```typescript
-import { ApolloServer, gql } from "apollo-server-azure-functions";
+import { ApolloServer } from "apollo-server-azure-functions";
 import { importSchema } from "graphql-import";
 
 // Provide resolver functions for your schema fields
