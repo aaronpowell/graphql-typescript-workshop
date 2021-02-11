@@ -9,7 +9,7 @@ It's time to create the schema for our GraphQL application. We're going to be bu
 
 ## 1. Extracting a schema
 
-Since we're going to have quite a large schema, we're going to extract it out to a new file. Go ahead and create `api/graphql/schema.graphql`, then copy the existing schema from `api/graphql/index.graphql` to it:
+Since we're going to have quite a large schema, we're going to extract it out to a new file. Go ahead and create `api/graphql/schema.graphql`, then copy the existing schema from `api/graphql/index.ts` to it:
 
 ```graphql
 type Query {
