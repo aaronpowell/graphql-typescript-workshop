@@ -71,6 +71,8 @@ const resolvers: Resolvers = {
 
 By specifying the the of the `resolvers` object we now get some type information given to us. If we look at the `id` argument of the `game` query, you'll notice that it knows it's a `string` type, and we are starting to bring the GraphQL types into our application.
 
+_Aside: I would add `generated.ts` and `graphql.schema.json` to the `.gitignore` file, since they change often we probably don't want the major churn in git history._
+
 ## Running The Application
 
 From a terminal run `npm start` from both the repository root and `api` folder to start the two servers, the web application will be on `http://localhost:3000` and the API on `http://localhost:7071`. Alternatively, you can use the VS Code launch of `Run full stack` to run both together with debuggers attached.
