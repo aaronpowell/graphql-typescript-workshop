@@ -41,7 +41,7 @@ export type GameModel = {
   answers: UserAnswerModel[];
 } & Model;
 
-export interface GameDataStore {
+export interface IGameDataSource {
   getGames(): Promise<GameModel[]>;
   getGame(id: string): Promise<GameModel>;
   createGame(questions: QuestionModel[]): Promise<GameModel>;
@@ -49,12 +49,12 @@ export interface GameDataStore {
   getUserGames(userId: string): Promise<GameModel[]>;
 }
 
-export interface UserDataStore {
+export interface IUserDataSource {
   getUser(id: string): Promise<UserModel>;
   createUser(name: string): Promise<UserModel>;
 }
 
-export interface QuestionDataStore {
+export interface IQuestionDataSource {
   getQuestion(id: string): Promise<QuestionModel>;
   getQuestions(): Promise<QuestionModel[]>;
 }

@@ -1,8 +1,8 @@
 import { DataSource } from "apollo-datasource";
 import { idGenerator } from "../../../utils";
-import { ModelType, UserDataStore, UserModel } from "../types";
+import { ModelType, IUserDataSource, UserModel } from "../types";
 
-export class UserDataSource extends DataSource implements UserDataStore {
+export class UserDataSource extends DataSource implements IUserDataSource {
   constructor(private users: UserModel[]) {
     super();
   }

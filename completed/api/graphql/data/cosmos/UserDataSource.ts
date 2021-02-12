@@ -1,10 +1,10 @@
 import { CosmosDataSource } from "apollo-datasource-cosmosdb";
 import { idGenerator } from "../../../utils";
-import { ModelType, UserDataStore, UserModel } from "../types";
+import { ModelType, IUserDataSource, UserModel } from "../types";
 
 export class UserDataSource
   extends CosmosDataSource<UserModel>
-  implements UserDataStore {
+  implements IUserDataSource {
   async getUser(id: string) {
     return await this.findOneById(id);
   }

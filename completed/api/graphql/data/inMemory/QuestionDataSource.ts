@@ -1,10 +1,10 @@
 import { DataSource } from "apollo-datasource";
 import { arrayRandomiser } from "../../../utils";
-import { QuestionDataStore, QuestionModel } from "../types";
+import { IQuestionDataSource, QuestionModel } from "../types";
 
 export class QuestionDataSource
   extends DataSource
-  implements QuestionDataStore {
+  implements IQuestionDataSource {
   #questions: QuestionModel[];
   constructor() {
     super();

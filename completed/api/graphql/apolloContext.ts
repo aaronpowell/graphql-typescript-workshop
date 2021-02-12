@@ -1,9 +1,9 @@
-import { GameDataStore, QuestionDataStore, UserDataStore } from "./data/types";
+import { IGameDataSource, IQuestionDataSource, IUserDataSource } from "./data/types";
 
 export type ApolloContext = {
   dataSources: {
-    user: UserDataStore;
-    game: GameDataStore;
-    question: QuestionDataStore;
+    user: IUserDataSource;
+    game: IGameDataSource;
+    question: IQuestionDataSource;
   };
 };
