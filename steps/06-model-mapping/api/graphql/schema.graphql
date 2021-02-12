@@ -1,0 +1,45 @@
+type Question {
+  id: ID!
+  question: String!
+  correctAnswer: String!
+  answers: [String!]!
+}
+
+type Game {
+  id: ID!
+  state: GameState
+  players: [Player!]!
+  questions: [Question!]!
+}
+
+enum GameState {
+  WaitingForPlayers
+  Started
+  Completed
+}
+
+type Player {
+  id: ID!
+  name: String!
+  game(gameId: ID): Game!
+  games: [Game!]!
+}
+
+type PlayerResult {
+  name: String!
+  question: String!
+  submittedAnswer: String!
+  correctAnswer: String!
+  answers: [String!]!
+  correct: Boolean
+}
+
+type Query {
+  game(id: ID!): Game
+  games: [Game!]!
+  playerResults(gameId: ID!, playerId: ID!): [PlayerResult!]!
+}
+
+schema {
+  query: Query
+}
