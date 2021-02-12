@@ -58,6 +58,11 @@ const resolvers: Resolvers = {
 
       return game;
     },
+    async games(user, _, { dataStore }) {
+      const games = await dataStore.getUserGames(user.id);
+
+      return games;
+    }
   },
   Mutation: {
     async createGame(_, __, { dataStore }) {

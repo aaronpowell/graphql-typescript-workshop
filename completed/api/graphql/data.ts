@@ -47,6 +47,7 @@ interface DataStore {
   getGames(): Promise<GameModel[]>;
   getGame(id: string): Promise<GameModel>;
   getUser(id: string): Promise<UserModel>;
+  getUserGames(userId: string): Promise<GameModel[]>;
   getQuestion(id: string): Promise<QuestionModel>;
   createGame(): Promise<GameModel>;
   createUser(name: string): Promise<UserModel>;
@@ -120,6 +121,26 @@ class CosmosDataStore implements DataStore {
     this.#client = client;
   }
 
+  async getUserGames(userId: string) {
+    const container = this.#getContainer();
+
+    const response = await container.items
+      .query<GameModel>({
+        query: `
+          SELECT c as Game
+          FROM c
+          JOIN (SELECT p.id FROM p IN c.players WHERE p.id = @id) AS player
+          WHERE c.modelType = @type`,
+        parameters: [
+          { name: "@id", value: userId },
+          { name: "@type", value: ModelType.Game },
+        ],
+      })
+      .fetchAll();
+
+    return response.resources;
+  }
+
   async getGames() {
     const container = this.#getContainer();
 
@@ -167,6 +188,24 @@ class CosmosDataStore implements DataStore {
   }
 
   async createUser(name: string) {
+    const container = this.#getContainer();
+
+    // without doing a proper auth solution we'll pretend that names are unique
+    const existingUser = await container.items
+      .query<UserModel>({
+        query:
+          "SELECT TOP 1 * FROM c WHERE c.name = @name AND c.modelType = @type",
+        parameters: [
+          { name: "@name", value: name },
+          { name: "@type", value: ModelType.User },
+        ],
+      })
+      .fetchAll();
+
+    if (existingUser.resources[0]) {
+      return existingUser.resources[0];
+    }
+
     const user: UserModel = {
       id: idGenerator(),
       modelType: ModelType.User,
@@ -177,7 +216,6 @@ class CosmosDataStore implements DataStore {
       userRoles: ["anonymous", "authenticated"],
     };
 
-    const container = this.#getContainer();
     const savedUser = await container.items.create(user);
     return savedUser.resource;
   }
@@ -198,6 +236,11 @@ class MockDataStore implements DataStore {
   #games: GameModel[] = [];
   constructor() {
     this.#questions = require("../../trivia.json");
+  }
+  getUserGames(userId: string): Promise<GameModel[]> {
+    return Promise.resolve(
+      this.#games.filter((g) => g.players.some((p) => p.id === userId))
+    );
   }
   getUser(id: string): Promise<UserModel> {
     return Promise.resolve(this.#users.find((u) => u.id === id));
@@ -232,6 +275,12 @@ class MockDataStore implements DataStore {
     return game;
   }
   createUser(name: string): Promise<UserModel> {
+    const existingUser = this.#users.find((u) => u.name === name);
+
+    if (existingUser) {
+      return Promise.resolve(existingUser);
+    }
+
     const user: UserModel = {
       id: idGenerator(),
       modelType: ModelType.User,
