@@ -27,6 +27,8 @@
     "@azure/cosmos": "^3.9.5",
     "@graphql-codegen/typescript-operations": "^1.17.14",
     "@graphql-codegen/typescript-react-apollo": "^2.2.1",
+    "apollo-datasource": "^0.7.3",
+    "apollo-datasource-cosmosdb": "^0.0.14",
     "apollo-server-azure-functions": "^2.20.0",
     "axios": "^0.21.1",
     "graphql-import": "^1.0.2"

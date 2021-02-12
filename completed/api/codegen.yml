@@ -4,11 +4,11 @@ documents: "./graphql/operations/*.graphql"
 generates:
   graphql/generated.ts:
     config:
-      contextType: "./data#Context"
+      contextType: "./apolloContext#ApolloContext"
       mappers:
-        Question: ./data#QuestionModel
-        Game: ./data#GameModel
-        Player: ./data#UserModel
+        Question: ./data/types#QuestionModel
+        Game: ./data/types#GameModel
+        Player: ./data/types#UserModel
     plugins:
       - "typescript"
       - "typescript-resolvers"

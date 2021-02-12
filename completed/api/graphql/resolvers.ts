@@ -1,17 +1,17 @@
 import { arrayRandomiser } from "../utils";
-import { ModelType, UserAnswerModel } from "./data";
+import { ModelType, UserAnswerModel } from "./data/types";
 import { GameState, Resolvers } from "./generated";
 
 const resolvers: Resolvers = {
   Query: {
-    game(_, { id }, { dataStore }) {
-      return dataStore.getGame(id);
+    game(_, { id }, { dataSources }) {
+      return dataSources.game.getGame(id);
     },
-    games(_, __, { dataStore }) {
-      return dataStore.getGames();
+    games(_, __, { dataSources }) {
+      return dataSources.game.getGames();
     },
-    async playerResults(_, { gameId, playerId }, { dataStore }) {
-      const game = await dataStore.getGame(gameId);
+    async playerResults(_, { gameId, playerId }, { dataSources }) {
+      const game = await dataSources.game.getGame(gameId);
 
       const playerAnswers = game.answers.filter((a) => a.user.id === playerId);
 
@@ -49,8 +49,8 @@ const resolvers: Resolvers = {
     },
   },
   Player: {
-    async game(user, { gameId }, { dataStore }) {
-      const game = await dataStore.getGame(gameId);
+    async game(user, { gameId }, { dataSources }) {
+      const game = await dataSources.game.getGame(gameId);
 
       if (!game.players.some((player) => player.id === user.id)) {
         throw Error("Player not part of the game");
@@ -58,40 +58,41 @@ const resolvers: Resolvers = {
 
       return game;
     },
-    async games(user, _, { dataStore }) {
-      const games = await dataStore.getUserGames(user.id);
+    async games(user, _, { dataSources }) {
+      const games = await dataSources.game.getUserGames(user.id);
 
       return games;
-    }
+    },
   },
   Mutation: {
-    async createGame(_, __, { dataStore }) {
-      const game = await dataStore.createGame();
+    async createGame(_, __, { dataSources }) {
+      const questions = await dataSources.question.getQuestions();
+      const game = await dataSources.game.createGame(questions);
 
       return game;
     },
-    async addPlayerToGame(_, { id, name }, { dataStore }) {
-      const user = await dataStore.createUser(name);
-      const game = await dataStore.getGame(id);
+    async addPlayerToGame(_, { id, name }, { dataSources }) {
+      const user = await dataSources.user.createUser(name);
+      const game = await dataSources.game.getGame(id);
       game.players.push(user);
-      await dataStore.updateGame(game);
+      await dataSources.game.updateGame(game);
 
       return user;
     },
-    async startGame(_, { id }, { dataStore }) {
-      const game = await dataStore.getGame(id);
+    async startGame(_, { id }, { dataSources }) {
+      const game = await dataSources.game.getGame(id);
       game.state = GameState.Started;
-      return await dataStore.updateGame(game);
+      return await dataSources.game.updateGame(game);
     },
     async submitAnswer(
       _,
       { answer, gameId, playerId, questionId },
-      { dataStore }
+      { dataSources }
     ) {
       const [game, user, question] = await Promise.all([
-        dataStore.getGame(gameId),
-        dataStore.getUser(playerId),
-        dataStore.getQuestion(questionId),
+        dataSources.game.getGame(gameId),
+        dataSources.user.getUser(playerId),
+        dataSources.question.getQuestion(questionId),
       ]);
 
       const answerModel: UserAnswerModel = {
@@ -104,7 +105,7 @@ const resolvers: Resolvers = {
 
       game.answers.push(answerModel);
 
-      await dataStore.updateGame(game);
+      await dataSources.game.updateGame(game);
       return user;
     },
   },
