@@ -174,7 +174,7 @@ export type UserAnswerModel = {
 } & Model;
 
 export type GameModel = {
-  state: GameState;
+  state: "WaitingForPlayers" | "Started" | "Completed";
   players: UserModel[];
   questions: QuestionModel[];
   answers: UserAnswerModel[];
