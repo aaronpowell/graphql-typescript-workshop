@@ -1,0 +1,1122 @@
+[
+  {
+    "id": "0",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What does CPU stand for?",
+    "correct_answer": "Central Processing Unit",
+    "incorrect_answers": [
+      "Central Process Unit",
+      "Computer Personal Unit",
+      "Central Processor Unit"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "1",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What does AD stand for in relation to Windows Operating Systems? ",
+    "correct_answer": "Active Directory",
+    "incorrect_answers": [
+      "Alternative Drive",
+      "Automated Database",
+      "Active Department"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "2",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "When was the programming language &quot;C#&quot; released?",
+    "correct_answer": "2000",
+    "incorrect_answers": ["1998", "1999", "2001"],
+    "modelType": "Question"
+  },
+  {
+    "id": "3",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What amount of bits commonly equals one byte?",
+    "correct_answer": "8",
+    "incorrect_answers": ["1", "2", "64"],
+    "modelType": "Question"
+  },
+  {
+    "id": "4",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of the following languages is used as a scripting language in the Unity 3D game engine?",
+    "correct_answer": "C#",
+    "incorrect_answers": ["Java", "C++", "Objective-C"],
+    "modelType": "Question"
+  },
+  {
+    "id": "5",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "If you were to code software in this language you&#039;d only be able to type 0&#039;s and 1&#039;s.",
+    "correct_answer": "Binary",
+    "incorrect_answers": ["JavaScript", "C++", "Python"],
+    "modelType": "Question"
+  },
+  {
+    "id": "6",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What is the most preferred image format used for logos in the Wikimedia database?",
+    "correct_answer": ".svg",
+    "incorrect_answers": [".png", ".jpeg", ".gif"],
+    "modelType": "Question"
+  },
+  {
+    "id": "7",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What was the first commerically available computer processor?",
+    "correct_answer": "Intel 4004",
+    "incorrect_answers": ["Intel 486SX", "TMS 1000", "AMD AM386"],
+    "modelType": "Question"
+  },
+  {
+    "id": "8",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In web design, what does CSS stand for?",
+    "correct_answer": "Cascading Style Sheet",
+    "incorrect_answers": [
+      "Counter Strike: Source",
+      "Corrective Style Sheet",
+      "Computer Style Sheet"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "9",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What is the domain name for the country Tuvalu?",
+    "correct_answer": ".tv",
+    "incorrect_answers": [".tu", ".tt", ".tl"],
+    "modelType": "Question"
+  },
+  {
+    "id": "10",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "While Apple was formed in California, in which western state was Microsoft founded?",
+    "correct_answer": "New Mexico",
+    "incorrect_answers": ["Washington", "Colorado", "Arizona"],
+    "modelType": "Question"
+  },
+  {
+    "id": "11",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What does the acronym CDN stand for in terms of networking?",
+    "correct_answer": "Content Delivery Network",
+    "incorrect_answers": [
+      "Content Distribution Network",
+      "Computational Data Network",
+      "Compressed Data Network"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "12",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "How many cores does the Intel i7-6950X have?",
+    "correct_answer": "10",
+    "incorrect_answers": ["12", "8", "4"],
+    "modelType": "Question"
+  },
+  {
+    "id": "13",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In the server hosting industry IaaS stands for...",
+    "correct_answer": "Infrastructure as a Service",
+    "incorrect_answers": [
+      "Internet as a Service",
+      "Internet and a Server",
+      "Infrastructure as a Server"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "14",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which coding language was the #1 programming language in terms of usage on GitHub in 2015?",
+    "correct_answer": "JavaScript",
+    "incorrect_answers": ["C#", "Python", "PHP"],
+    "modelType": "Question"
+  },
+  {
+    "id": "15",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What port does HTTP run on?",
+    "correct_answer": "80",
+    "incorrect_answers": ["53", "443", "23"],
+    "modelType": "Question"
+  },
+  {
+    "id": "16",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In HTML, which non-standard tag used to be be used to make elements scroll across the viewport?",
+    "correct_answer": "&lt;marquee&gt;&lt;/marquee&gt;",
+    "incorrect_answers": [
+      "&lt;scroll&gt;&lt;/scroll&gt;",
+      "&lt;move&gt;&lt;/move&gt;",
+      "&lt;slide&gt;&lt;/slide&gt;"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "17",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which of these was the name of a bug found in April 2014 in the publicly available OpenSSL cryptography library?",
+    "correct_answer": "Heartbleed",
+    "incorrect_answers": ["Shellshock", "Corrupted Blood", "Shellscript"],
+    "modelType": "Question"
+  },
+  {
+    "id": "18",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In &quot;Hexadecimal&quot;, what color would be displayed from the color code? &quot;#00FF00&quot;?",
+    "correct_answer": "Green",
+    "incorrect_answers": ["Red", "Blue", "Yellow"],
+    "modelType": "Question"
+  },
+  {
+    "id": "19",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of these programming languages is a low-level language?",
+    "correct_answer": "Assembly",
+    "incorrect_answers": ["Python", "C#", "Pascal"],
+    "modelType": "Question"
+  },
+  {
+    "id": "20",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In computing terms, typically what does CLI stand for?",
+    "correct_answer": "Command Line Interface",
+    "incorrect_answers": [
+      "Common Language Input",
+      "Control Line Interface",
+      "Common Language Interface"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "21",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What does &quot;LCD&quot; stand for?",
+    "correct_answer": "Liquid Crystal Display",
+    "incorrect_answers": [
+      "Language Control Design",
+      "Last Common Difference",
+      "Long Continuous Design"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "22",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Who is the original author of the realtime physics engine called PhysX?",
+    "correct_answer": "NovodeX",
+    "incorrect_answers": ["Ageia", "Nvidia", "AMD"],
+    "modelType": "Question"
+  },
+  {
+    "id": "23",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of the following is a personal computer made by the Japanese company Fujitsu?",
+    "correct_answer": "FM-7",
+    "incorrect_answers": ["PC-9801", "Xmillennium ", "MSX"],
+    "modelType": "Question"
+  },
+  {
+    "id": "24",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": ".rs is the top-level domain for what country?",
+    "correct_answer": "Serbia",
+    "incorrect_answers": ["Romania", "Russia", "Rwanda"],
+    "modelType": "Question"
+  },
+  {
+    "id": "25",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is known as &quot;the brain&quot; of the Computer?",
+    "correct_answer": "Central Processing Unit",
+    "incorrect_answers": [
+      "Motherboard",
+      "Graphics Processing Unit",
+      "Keyboard"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "26",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which data structure does FILO apply to?",
+    "correct_answer": "Stack",
+    "incorrect_answers": ["Queue", "Heap", "Tree"],
+    "modelType": "Question"
+  },
+  {
+    "id": "27",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What does the term GPU stand for?",
+    "correct_answer": "Graphics Processing Unit",
+    "incorrect_answers": [
+      "Gaming Processor Unit",
+      "Graphite Producing Unit",
+      "Graphical Proprietary Unit"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "28",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is the name of the process that sends one qubit of information using two bits of classical information?",
+    "correct_answer": "Quantum Teleportation",
+    "incorrect_answers": [
+      "Super Dense Coding",
+      "Quantum Entanglement",
+      "Quantum Programming"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "29",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which of these is not a key value of Agile software development?",
+    "correct_answer": "Comprehensive documentation",
+    "incorrect_answers": [
+      "Individuals and interactions",
+      "Customer collaboration",
+      "Responding to change"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "30",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is the main CPU is the Sega Mega Drive / Sega Genesis?",
+    "correct_answer": "Motorola 68000",
+    "incorrect_answers": ["Zilog Z80", "Yamaha YM2612", "Intel 8088"],
+    "modelType": "Question"
+  },
+  {
+    "id": "31",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "This mobile OS held the largest market share in 2012.",
+    "correct_answer": "iOS",
+    "incorrect_answers": ["Android", "BlackBerry", "Symbian"],
+    "modelType": "Question"
+  },
+  {
+    "id": "32",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of these people was NOT a founder of Apple Inc?",
+    "correct_answer": "Jonathan Ive",
+    "incorrect_answers": ["Steve Jobs", "Ronald Wayne", "Steve Wozniak"],
+    "modelType": "Question"
+  },
+  {
+    "id": "33",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which RAID array type is associated with data mirroring?",
+    "correct_answer": "RAID 1",
+    "incorrect_answers": ["RAID 0", "RAID 10", "RAID 5"],
+    "modelType": "Question"
+  },
+  {
+    "id": "34",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "How many values can a single byte represent?",
+    "correct_answer": "256",
+    "incorrect_answers": ["8", "1", "1024"],
+    "modelType": "Question"
+  },
+  {
+    "id": "35",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "The C programming language was created by this American computer scientist. ",
+    "correct_answer": "Dennis Ritchie",
+    "incorrect_answers": ["Tim Berners Lee", "al-Khwārizmī", "Willis Ware"],
+    "modelType": "Question"
+  },
+  {
+    "id": "36",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which programming language was developed by Sun Microsystems in 1995?",
+    "correct_answer": "Java",
+    "incorrect_answers": ["Python", "Solaris OS", "C++"],
+    "modelType": "Question"
+  },
+  {
+    "id": "37",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "The name of technology company HP stands for what?",
+    "correct_answer": "Hewlett-Packard",
+    "incorrect_answers": ["Howard Packmann", "Husker-Pollosk", "Hellman-Pohl"],
+    "modelType": "Question"
+  },
+  {
+    "id": "38",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Who invented the &quot;Spanning Tree Protocol&quot;?",
+    "correct_answer": "Radia Perlman",
+    "incorrect_answers": ["Paul Vixie", "Vint Cerf", "Michael Roberts"],
+    "modelType": "Question"
+  },
+  {
+    "id": "39",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In programming, what do you call functions with the same name but different implementations?",
+    "correct_answer": "Overloading",
+    "incorrect_answers": ["Overriding", "Abstracting", "Inheriting"],
+    "modelType": "Question"
+  },
+  {
+    "id": "40",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What does RAID stand for?",
+    "correct_answer": "Redundant Array of Independent Disks",
+    "incorrect_answers": [
+      "Rapid Access for Indexed Devices",
+      "Range of Applications with Identical Designs",
+      "Randomized Abstract Identification Description"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "41",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "How long is an IPv6 address?",
+    "correct_answer": "128 bits",
+    "incorrect_answers": ["32 bits", "64 bits", "128 bytes"],
+    "modelType": "Question"
+  },
+  {
+    "id": "42",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In computing, what does MIDI stand for?",
+    "correct_answer": "Musical Instrument Digital Interface",
+    "incorrect_answers": [
+      "Musical Interface of Digital Instruments",
+      "Modular Interface of Digital Instruments",
+      "Musical Instrument Data Interface"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "43",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In computing, what does LAN stand for?",
+    "correct_answer": "Local Area Network",
+    "incorrect_answers": [
+      "Long Antenna Node",
+      "Light Access Node",
+      "Land Address Navigation"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "44",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "How many bytes are in a single Kibibyte?",
+    "correct_answer": "1024",
+    "incorrect_answers": ["2400", "1000", "1240"],
+    "modelType": "Question"
+  },
+  {
+    "id": "45",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "According to DeMorgan&#039;s Theorem, the Boolean expression (AB)&#039; is equivalent to:",
+    "correct_answer": "A&#039; + B&#039;",
+    "incorrect_answers": [
+      "A&#039;B + B&#039;A",
+      "A&#039;B&#039;",
+      "AB&#039; + AB"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "46",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "The acronym &quot;RIP&quot; stands for which of these?",
+    "correct_answer": "Routing Information Protocol",
+    "incorrect_answers": [
+      "Runtime Instance Processes",
+      "Regular Interval Processes",
+      "Routine Inspection Protocol"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "47",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which of these is not a layer in the OSI model for data communications?",
+    "correct_answer": "Connection Layer",
+    "incorrect_answers": [
+      "Application Layer",
+      "Transport Layer",
+      "Physical Layer"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "48",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is the number of keys on a standard Windows Keyboard?",
+    "correct_answer": "104",
+    "incorrect_answers": ["64", "94", "76"],
+    "modelType": "Question"
+  },
+  {
+    "id": "49",
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What does the computer software acronym JVM stand for?",
+    "correct_answer": "Java Virtual Machine",
+    "incorrect_answers": [
+      "Java Vendor Machine",
+      "Java Visual Machine",
+      "Just Virtual Machine"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "50",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What is the name of &quot;Team Fortress 2&quot; update, in which it became Free-to-play?",
+    "correct_answer": "&Uuml;ber Update",
+    "incorrect_answers": [
+      "Pyromania Update",
+      "Mann-Conomy Update",
+      "Engineer Update"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "51",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Who&#039;s the creator of Geometry Dash?",
+    "correct_answer": "Robert Topala",
+    "incorrect_answers": ["Scott Cawthon", "Adam Engels", "Andrew Spinks"],
+    "modelType": "Question"
+  },
+  {
+    "id": "52",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who created the digital distribution platform Steam?",
+    "correct_answer": "Valve",
+    "incorrect_answers": ["Pixeltail Games", "Ubisoft", "Electronic Arts"],
+    "modelType": "Question"
+  },
+  {
+    "id": "53",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What year was the game Team Fortress 2 released?",
+    "correct_answer": "2007",
+    "incorrect_answers": ["2009", "2005", "2010"],
+    "modelType": "Question"
+  },
+  {
+    "id": "54",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What was the code name given to Sonic the Hedgehog 4 during its development?",
+    "correct_answer": "Project Needlemouse",
+    "incorrect_answers": [
+      "Project Bluespike",
+      "Project Roboegg",
+      "Project Darksphere"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "55",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is Solid Snake&#039;s real name?",
+    "correct_answer": "David",
+    "incorrect_answers": ["Solid Snake", "John", "Huey"],
+    "modelType": "Question"
+  },
+  {
+    "id": "56",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Who is the villain company in &quot;Stardew Valley&quot;?",
+    "correct_answer": "Joja Co ",
+    "incorrect_answers": ["Ronin", "Empire", "Robotnik Industry&#039;s "],
+    "modelType": "Question"
+  },
+  {
+    "id": "57",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "In the original &quot;Super Mario Bros.&quot;, what is the acceleration of Mario if he was in free fall?",
+    "correct_answer": "91.28 m/s^2",
+    "incorrect_answers": ["110  m/s^2", "9.42  m/s^2", "4.4  m/s^2"],
+    "modelType": "Question"
+  },
+  {
+    "id": "58",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "How much does the &#039;AWP&#039; cost in Counter-Strike: Global Offensive?",
+    "correct_answer": "$4750",
+    "incorrect_answers": ["$4500", "$4650", "$5000"],
+    "modelType": "Question"
+  },
+  {
+    "id": "59",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What was the first interactive movie video game?",
+    "correct_answer": "Astron Belt",
+    "incorrect_answers": ["Dragon&#039;s Lair", "Cube Quest", "M.A.C.H. 3"],
+    "modelType": "Question"
+  },
+  {
+    "id": "60",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which of these Starbound races has a Wild West culture?",
+    "correct_answer": "Novakid",
+    "incorrect_answers": ["Avian", "Human", "Hylotl"],
+    "modelType": "Question"
+  },
+  {
+    "id": "61",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In Need For Speed Most Wanted (2005), what do you drive at the beginning of the career mode?",
+    "correct_answer": "BMW M3 GTR",
+    "incorrect_answers": ["Porsche 911 Turbo", "Nissan 240SX", "Ford Mustang"],
+    "modelType": "Question"
+  },
+  {
+    "id": "62",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What happened to Half-Life 2 prior to its release, which resulted in Valve starting over the development of the game?",
+    "correct_answer": "The source code got leaked",
+    "incorrect_answers": [
+      "They weren&#039;t satisfied with the result",
+      "The story was not good enough",
+      "Way too many bugs to be fixed"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "63",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "TF2: What code does Soldier put into the door keypad in &quot;Meet the Spy&quot;?",
+    "correct_answer": "1111",
+    "incorrect_answers": ["1432", "1337", "No code"],
+    "modelType": "Question"
+  },
+  {
+    "id": "64",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What was Frank West&#039;s job in &quot;Dead Rising&quot;?",
+    "correct_answer": "Photojournalist",
+    "incorrect_answers": ["Janitor", "Chef", "Taxi Driver"],
+    "modelType": "Question"
+  },
+  {
+    "id": "65",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In &quot;Overwatch&quot;, what is the name of Mercy&#039;s &quot;ultimate ability&quot;?",
+    "correct_answer": "Valkyrie",
+    "incorrect_answers": ["Earthshatter", "Rocket Barrage", "Molten Core"],
+    "modelType": "Question"
+  },
+  {
+    "id": "66",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What video game sparked controversy because of its hidden &quot;Hot Coffee&quot; minigame?",
+    "correct_answer": "Grand Theft Auto: San Andreas",
+    "incorrect_answers": [
+      "Grand Theft Auto: Vice City",
+      "Hitman: Blood Money",
+      "Cooking Mama"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "67",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "How many flagship monsters appear in Monster Hunter Gernerations?",
+    "correct_answer": "4",
+    "incorrect_answers": ["1", "2", "3"],
+    "modelType": "Question"
+  },
+  {
+    "id": "68",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What&#039;s the name of the halloween-related Sims 4 Stuff Pack released September 29th, 2015?",
+    "correct_answer": "Spooky Stuff",
+    "incorrect_answers": [
+      "Ghosts n&#039; Ghouls",
+      "Nerving Nights",
+      "Fearful Frights"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "69",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "In Xenoblade Chronicles X, which class has a sniper rifle as it&#039;s primary weapon?",
+    "correct_answer": "Partisan Eagle",
+    "incorrect_answers": ["Blast Fencer", "Winged Viper", "Bastion Warrior"],
+    "modelType": "Question"
+  },
+  {
+    "id": "70",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In what year was Hearthstone released?",
+    "correct_answer": "2014",
+    "incorrect_answers": ["2011", "2013", "2012"],
+    "modelType": "Question"
+  },
+  {
+    "id": "71",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In the game &quot;Terraria&quot;, which of these bosses are pre-hardmode bosses?",
+    "correct_answer": "Eye of Cthulhu",
+    "incorrect_answers": ["Plantera", "Skeletron Prime", "The Destroyer"],
+    "modelType": "Question"
+  },
+  {
+    "id": "72",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "This weapon in Counter-Strike: Global Offensive does not exist in real life.",
+    "correct_answer": "M4A4",
+    "incorrect_answers": ["AWP", "M4A1", "MP9"],
+    "modelType": "Question"
+  },
+  {
+    "id": "73",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In what year was the game &quot;FTL: Faster Than Light&quot; released?",
+    "correct_answer": "2012",
+    "incorrect_answers": ["2014", "2013", "2011"],
+    "modelType": "Question"
+  },
+  {
+    "id": "74",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What was the first .hack game?",
+    "correct_answer": ".hack//Infection",
+    "incorrect_answers": [".hack//Zero", ".hack//Sign", ".hack//Liminality"],
+    "modelType": "Question"
+  },
+  {
+    "id": "75",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In Terraria, what does the Wall of Flesh not drop upon defeat?",
+    "correct_answer": "Picksaw",
+    "incorrect_answers": ["Pwnhammer", "Breaker Blade", "Laser Rifle"],
+    "modelType": "Question"
+  },
+  {
+    "id": "76",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "&quot;Minecraft&quot; was released from beta in 2011 during a convention held in which city?",
+    "correct_answer": "Las Vegas",
+    "incorrect_answers": ["Paris", "Bellevue", "London"],
+    "modelType": "Question"
+  },
+  {
+    "id": "77",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "How many regular Sunken Sea Scrolls are there in &quot;Splatoon&quot;?",
+    "correct_answer": "27",
+    "incorrect_answers": ["32", "30", "5"],
+    "modelType": "Question"
+  },
+  {
+    "id": "78",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Danganronpa Another Episode: Ultra Despair Girls is set after which Danganronpa game?",
+    "correct_answer": "Danganronpa: Trigger Happy Havoc",
+    "incorrect_answers": [
+      "Danganronpa 2: Goodbye Despair",
+      "Danganronpa V3: Killing Harmony",
+      "Danganronpa 3: The End of Hope&#039;s Peak High School"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "79",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is not a playable race in &quot;Final Fantasy XIV: A Realm Reborn&quot;?",
+    "correct_answer": "Hume",
+    "incorrect_answers": ["Miqo&#039;te", "Lalafell", "Roegadyn"],
+    "modelType": "Question"
+  },
+  {
+    "id": "80",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which game in the &quot;Dark Souls&quot; series does the player play as the &quot;Ashen One&quot;?",
+    "correct_answer": "Dark Souls III",
+    "incorrect_answers": ["Dark Souls I", "Bloodborne", "Demon Souls"],
+    "modelType": "Question"
+  },
+  {
+    "id": "81",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is the name of the first level in &quot;Call of Duty: World at War&quot;?",
+    "correct_answer": "Semper Fi",
+    "incorrect_answers": ["Ring of Steel", "Vendetta", "Eviction"],
+    "modelType": "Question"
+  },
+  {
+    "id": "82",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In the &quot;Call Of Duty: Zombies&quot; map &quot;Moon&quot;, there is a secondary called the QED. What does QED stand for?",
+    "correct_answer": "Quantum Entanglement Device",
+    "incorrect_answers": [
+      "Quad Ectoplasmic Driver",
+      "Question Every Dog",
+      "Quality Edward Device"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "83",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In &quot;Call Of Duty: Zombies&quot;, what is the name of the Pack-A-Punched Crossbow?",
+    "correct_answer": "Awful Lawton",
+    "incorrect_answers": ["Longinus", "V-R11", "Predator"],
+    "modelType": "Question"
+  },
+  {
+    "id": "84",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In &quot;Call Of Duty: Zombies&quot;, completing which map&#039;s main easter egg will reward you with the achievement, &quot;Little Lost Girl&quot;?",
+    "correct_answer": "Origins",
+    "incorrect_answers": ["Revelations", "Moon", "Tranzit"],
+    "modelType": "Question"
+  },
+  {
+    "id": "85",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which company developed and published Game Dev Tycoon?",
+    "correct_answer": "Greenheart Games",
+    "incorrect_answers": ["Greenland Games", "The Tycoonists", "MomCorp"],
+    "modelType": "Question"
+  },
+  {
+    "id": "86",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which of these characters wasn&#039;t a villian in Club Penguin?",
+    "correct_answer": "The Director",
+    "incorrect_answers": [
+      "Herbert P. Bear",
+      "Tusk",
+      "Ultimate Proto-Bot 10000"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "87",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In which mall does &quot;Dead Rising&quot; take place?",
+    "correct_answer": "Willamette Parkview Mall",
+    "incorrect_answers": [
+      "Liberty Mall",
+      "Twin Pines Mall",
+      "Central Square Shopping Center"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "88",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In what year was Pok&eacute;mon Diamond &amp; Pearl released in Japan?",
+    "correct_answer": "2006",
+    "incorrect_answers": ["2009", "2007", "2008"],
+    "modelType": "Question"
+  },
+  {
+    "id": "89",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of these is NOT a name of a city in the main island of PLAYERUNKNOWN&#039;S BATTLEGROUNDS?",
+    "correct_answer": "Belushya Guba",
+    "incorrect_answers": ["Yasnaya Polyana", "Pochinki", "Georgopol"],
+    "modelType": "Question"
+  },
+  {
+    "id": "90",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In Telltale Games&#039; &quot;The Walking Dead: Season One&quot; what is the name of Clementine&#039;s father?",
+    "correct_answer": "Ed",
+    "incorrect_answers": ["Charles", "Lee", "Walter"],
+    "modelType": "Question"
+  },
+  {
+    "id": "91",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "How many controllers could a Nintendo GameCube have plugged in at one time?",
+    "correct_answer": "4",
+    "incorrect_answers": ["8", "6", "2"],
+    "modelType": "Question"
+  },
+  {
+    "id": "92",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which Crypt of the NecroDancer (2015) character has a soundtrack by Jake &quot;Virt&quot; Kaufman?",
+    "correct_answer": "Uncle Eli",
+    "incorrect_answers": ["Cadence", "Nocturna", "Octavian (Bard)"],
+    "modelType": "Question"
+  },
+  {
+    "id": "93",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is the only Generation III Pokemon whose name begins with the letter I?",
+    "correct_answer": "Illumise",
+    "incorrect_answers": ["Infernape", "Ivysaur", "Igglybuff"],
+    "modelType": "Question"
+  },
+  {
+    "id": "94",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "In World of Warcraft, which raid instance features a chess event?",
+    "correct_answer": "Karazhan",
+    "incorrect_answers": [
+      "Zul&#039;Aman",
+      "Blackwing Lair",
+      "Temple of Ahn&#039;Qiraj"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "95",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In the 1980s, a service called Gameline allowed users to download games to what console?",
+    "correct_answer": "Atari 2600",
+    "incorrect_answers": [
+      "Sega Genesis",
+      "Nintendo Entertainment System",
+      "ColecoVision"
+    ],
+    "modelType": "Question"
+  },
+  {
+    "id": "96",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What is the subtitle for Gran Turismo 3?",
+    "correct_answer": "A-Spec",
+    "incorrect_answers": ["Championship", "Drive", "Nitro"],
+    "modelType": "Question"
+  },
+  {
+    "id": "97",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Who is credited with having created the world&#039;s first video game Easter Egg?",
+    "correct_answer": "Warren Robinett",
+    "incorrect_answers": ["Julius Smith", "Will Crowther", "Don Woods"],
+    "modelType": "Question"
+  },
+  {
+    "id": "98",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What character is NOT apart of the Grand Theft Auto series?",
+    "correct_answer": "Michael Cardenas",
+    "incorrect_answers": ["Packie McReary", "Tommy Vercetti", "Lester Crest"],
+    "modelType": "Question"
+  },
+  {
+    "id": "99",
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of the following characters is NOT playable in &quot;Resident Evil 6&quot;?",
+    "correct_answer": "Jill Valentine",
+    "incorrect_answers": ["Chris Redfield", "Sherry Birkin", "Helena Harper"],
+    "modelType": "Question"
+  }
+]
