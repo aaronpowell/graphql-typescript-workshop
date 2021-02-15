@@ -1,29 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import gql from "graphql-tag";
-import { useMutation } from "@apollo/client";
-
-const ADD_PLAYER = gql`
-  mutation addPlayerScreen($id: ID!, $name: String!) {
-    addPlayerToGame(id: $id, name: $name) {
-      id
-    }
-
-    startGame(id: $id) {
-      id
-      players {
-        id
-        name
-      }
-    }
-  }
-`;
+import { useAddPlayerScreenMutation } from "../generated";
 
 const JoinGame: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const history = useHistory();
   const [name, setName] = useState("");
-  const [addPlayerToGame, { data: addPlayerData }] = useMutation(ADD_PLAYER);
+  const [
+    addPlayerToGame,
+    { data: addPlayerData },
+  ] = useAddPlayerScreenMutation();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
