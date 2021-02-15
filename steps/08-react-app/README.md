@@ -48,7 +48,7 @@ Unfortunately though, we've lost our type-safety. We don't know what arguments a
 
 ## 2. Adding type-safety to the client
 
-The code generator we introduced has a plugin that we can use to generate a `TypedDocumentNode`, [`@graphql-codegen/typed-document-node`](https://graphql-code-generator.com/docs/plugins/typed-document-node), which we can pass to the `useQuery` hook (or the comparitable method if you're using another framework). To use this, we'll create a series of operations that will tell the code generator how we _expect_ a client to consume the GraphQL server. Since we already have the code generator installed, we'll use that config file and avoid duplicating the dependencies, so let's install the plugin.
+The code generator we introduced has a plugin that we can use to generate a `TypedDocumentNode`, [`@graphql-codegen/typed-document-node`](https://graphql-code-generator.com/docs/plugins/typed-document-node), which we can pass to the `useQuery` hook (or the comparable method if you're using another framework). To use this, we'll create a series of operations that will tell the code generator how we _expect_ a client to consume the GraphQL server. Since we already have the code generator installed, we'll use that config file and avoid duplicating the dependencies, so let's install the plugin.
 
 ```bash
 $> cd api

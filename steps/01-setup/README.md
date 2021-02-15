@@ -59,7 +59,7 @@ We've changed how the Function outputs the HTTP response to not use a variable, 
 It's now time to create a GraphQL endpoint. Open up `graphql/index.ts` and update it with the following:
 
 ```typescript
-import { ApolloServer, gql } from 'apollo-server-azure-functions';
+import { ApolloServer, gql } from "apollo-server-azure-functions";
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -71,7 +71,7 @@ const typeDefs = gql`
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    hello: () => 'Hello from our GraphQL backend!',
+    hello: () => "Hello from our GraphQL backend!",
   },
 };
 
@@ -86,7 +86,7 @@ It's now time to test our server. Run the Functions app (see below) and navigate
 
 ```graphql
 query {
-    hello
+  hello
 }
 ```
 
