@@ -1,0 +1,16 @@
+body {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+li.submitted {
+  font-style: italic;
+}
+
+li.correct {
+  font-weight: bold;
+}
