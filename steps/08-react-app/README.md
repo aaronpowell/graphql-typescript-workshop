@@ -16,7 +16,7 @@ mutation {
 }
 ```
 
-Apollo's GraphQL client for React provides us with a [`useMutation` hook](https://www.apollographql.com/docs/react/data/mutations/#executing-a-mutation) that we can provide a GraphQL string to using the `gql` function (from `@apollo/client`). Now our `CreateGame.tsx` would look like this:
+Apollo's GraphQL client for React provides us with a [`useMutation` hook](https://www.apollographql.com/docs/react/data/mutations/#executing-a-mutation) that we can provide a GraphQL `DocumentNode` to using the `gql` function (from `@apollo/client`). Now our `CreateGame.tsx` would look like this:
 
 ```typescript
 import React from "react";
@@ -48,11 +48,11 @@ Unfortunately though, we've lost our type-safety. We don't know what arguments a
 
 ## 2. Adding type-safety to the client
 
-The code generator we introduced has a plugin that we can use to generate integration with Apollo, [`@graphql-codegen/typescript-react-apollo`](https://graphql-code-generator.com/docs/plugins/typescript-react-apollo). To use this, we'll create a series of operations that will tell the code generator how we _expect_ a client to consume the GraphQL server. Since we already have the code generator installed, we'll use that config file and avoid duplicating the dependencies, so let's install the plugin.
+The code generator we introduced has a plugin that we can use to generate a `TypedDocumentNode`, [`@graphql-codegen/typed-document-node`](https://graphql-code-generator.com/docs/plugins/typed-document-node), which we can pass to the `useQuery` hook (or the comparitable method if you're using another framework). To use this, we'll create a series of operations that will tell the code generator how we _expect_ a client to consume the GraphQL server. Since we already have the code generator installed, we'll use that config file and avoid duplicating the dependencies, so let's install the plugin.
 
 ```bash
 $> cd api
-$> npm install --save-dev @graphql-codegen/typescript-react-apollo
+$> npm install --save-dev @graphql-codegen/typed-document-node
 ```
 
 Next, we'll open `api/config.yml`, add a location for the operations and an output target:
@@ -84,8 +84,8 @@ generates:
       withComponent: false
     plugins:
       - "typescript"
-      - "typescript-react-apollo"
       - "typescript-operations"
+      - "typed-document-node"
 hooks:
   afterAllFileWrite:
     - npx prettier --write
@@ -101,18 +101,19 @@ mutation CreateGame {
 }
 ```
 
-If we run the code generator again (`npm run gen`) we'll now find a new file in the `src` folder that contains some React hooks that we can use.
+If we run the code generator again (`npm run gen`) we'll now find a new file in the `src` folder that contains some types for us to use.
 
 ## 3. Updating our `CreateGame` page
 
-Time to refactor the `CreateGame` page to use this new hook. If we go to import the `../generated.tsx` file we'll find an export called `useCreateGameMutation`.
+Time to refactor the `CreateGame` page to use this new `TypedDocumentNode`. If we go to import the `../generated.tsx` file we'll find an export called `CreateGameDocument`.
 
 ```typescript
+import { useMutation } from "@apollo/client";
 import React from "react";
-import { useCreateGameMutation } from "../generated";
+import { CreateGameDocument } from "../generated";
 
 const CreateGame: React.FC = () => {
-  const [createGame] = useCreateGameMutation();
+  const [createGame] = useMutation(CreateGameDocument);
 
   return (
     <div>
@@ -128,16 +129,16 @@ export default CreateGame;
 We can then combine this with other React hooks to disable the button when the game is being created and navigate to the next page when it is:
 
 ```typescript
-import React, { useState, useEffect } from "react";
+import { useMutation } from "@apollo/client";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useCreateGameMutation } from "../generated";
+import { CreateGameDocument } from "../generated";
 
 const CreateGame: React.FC = () => {
   const [creating, setCreating] = useState(false);
-  const [
-    createGame,
-    { loading, called, data, error },
-  ] = useCreateGameMutation();
+  const [createGame, { loading, called, data, error }] = useMutation(
+    CreateGameDocument
+  );
 
   const history = useHistory();
 
@@ -191,10 +192,12 @@ mutation addPlayerScreen($id: ID!, $name: String!) {
 
 _While the data model is designed as a multiplayer game, we'll implement single player at the moment, which means we can combine the mutations into a single GraphQL call._
 
-We can use the hook that is generated to get a mutation function with a `variables` argument that expects an object with the properties `id` and `name` which are both `string`s as defined in the schema:
+We can use the `TypedDocumentNode` that is generated to get a mutation function with a `variables` argument that expects an object with the properties `id` and `name` which are both `string`s as defined in the schema:
 
 ```typescript
-const [addPlayerToGame, { loading, data }] = useAddPlayerScreenMutation();
+const [addPlayerToGame, { loading, data }] = useMutation(
+  AddPlayerScreenDocument
+);
 
 // snip
 addPlayerToGame({
