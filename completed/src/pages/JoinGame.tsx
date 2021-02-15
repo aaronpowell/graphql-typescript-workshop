@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import { useAddPlayerScreenMutation } from "../generated";
+import { useMutation } from "@apollo/client";
+import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import { AddPlayerScreenDocument } from "../generated";
 
 const JoinGame: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const history = useHistory();
   const [name, setName] = useState("");
-  const [addPlayerToGame, { loading, data }] = useAddPlayerScreenMutation();
+  const [addPlayerToGame, { loading, data }] = useMutation(
+    AddPlayerScreenDocument
+  );
 
   useEffect(() => {
     if (data) {

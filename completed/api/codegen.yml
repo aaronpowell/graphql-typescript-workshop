@@ -23,8 +23,8 @@ generates:
       withComponent: false
     plugins:
       - "typescript"
-      - "typescript-react-apollo"
       - "typescript-operations"
+      - "typed-document-node"
 hooks:
   afterAllFileWrite:
     - npx prettier --write

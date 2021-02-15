@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useMutation } from "@apollo/client";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useCreateGameMutation } from "../generated";
+import { CreateGameDocument } from "../generated";
 
 const CreateGame: React.FC = () => {
   const [creating, setCreating] = useState(false);
-  const [
-    createGame,
-    { loading, called, data, error },
-  ] = useCreateGameMutation();
+  const [createGame, { loading, called, data, error }] = useMutation(
+    CreateGameDocument
+  );
 
   const history = useHistory();
 

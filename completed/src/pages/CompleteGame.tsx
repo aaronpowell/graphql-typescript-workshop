@@ -1,11 +1,12 @@
+import { useQuery } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router-dom";
-import { usePlayerResultsQuery } from "../generated";
+import { PlayerResultsDocument } from "../generated";
 
 const CompleteGame: React.FC = () => {
   const { id, playerId } = useParams<{ id: string; playerId: string }>();
 
-  const { loading, data } = usePlayerResultsQuery({
+  const { loading, data } = useQuery(PlayerResultsDocument, {
     variables: {
       gameId: id,
       playerId,

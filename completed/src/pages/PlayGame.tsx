@@ -1,27 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useMutation, useQuery } from "@apollo/client";
+import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import { GetGameDocument, Question, SubmitAnswerDocument } from "../generated";
 import useInterval from "../useInterval";
-import {
-  Question,
-  useGetGameQuery,
-  useSubmitAnswerMutation,
-} from "../generated";
 
 const PlayGame: React.FC = () => {
   const { id, playerId } = useParams<{ id: string; playerId: string }>();
   const history = useHistory();
   const [timeRemaining, setTimeRemaining] = useState(30);
   const [answer, setAnswer] = useState("");
-  const { loading, data } = useGetGameQuery({ variables: { id } });
+  const { loading, data } = useQuery(GetGameDocument, { variables: { id } });
   const [question, setQuestion] = useState<{
     question: string;
     answers: string[];
     id: string;
   }>();
-  const [
-    submitAnswer,
-    { loading: mutationLoading },
-  ] = useSubmitAnswerMutation();
+  const [submitAnswer, { loading: mutationLoading }] = useMutation(
+    SubmitAnswerDocument
+  );
   const [questions, setQuestions] = useState<
     Pick<Question, "id" | "question" | "answers">[]
   >([]);
