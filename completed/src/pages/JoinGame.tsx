@@ -6,14 +6,11 @@ const JoinGame: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const history = useHistory();
   const [name, setName] = useState("");
-  const [
-    addPlayerToGame,
-    { loading, data: addPlayerData },
-  ] = useAddPlayerScreenMutation();
+  const [addPlayerToGame, { loading, data }] = useAddPlayerScreenMutation();
 
   useEffect(() => {
-    if (addPlayerData) {
-      history.push(`/game/play/${id}/${addPlayerData.addPlayerToGame.id}`);
+    if (data) {
+      history.push(`/game/play/${id}/${data.addPlayerToGame.id}`);
     }
   });
 
