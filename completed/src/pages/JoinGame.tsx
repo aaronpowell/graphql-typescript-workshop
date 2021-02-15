@@ -12,7 +12,7 @@ const JoinGame: React.FC = () => {
     if (data) {
       history.push(`/game/play/${id}/${data.addPlayerToGame.id}`);
     }
-  });
+  }, [data, id, history]);
 
   return (
     <div>
