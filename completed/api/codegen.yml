@@ -1,6 +1,6 @@
 overwrite: true
 schema: "./graphql/schema.graphql"
-documents: "./graphql/operations/*.graphql"
+documents: "../src/operations/*.graphql"
 generates:
   graphql/generated.ts:
     config:
