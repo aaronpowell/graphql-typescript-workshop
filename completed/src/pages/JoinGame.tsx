@@ -8,22 +8,11 @@ const JoinGame: React.FC = () => {
   const [name, setName] = useState("");
   const [
     addPlayerToGame,
-    { data: addPlayerData },
+    { loading, data: addPlayerData },
   ] = useAddPlayerScreenMutation();
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (loading) {
-      addPlayerToGame({
-        variables: { id, name },
-      });
-    }
-  }, [loading, addPlayerToGame, id, name]);
 
   useEffect(() => {
     if (addPlayerData) {
-      console.log(addPlayerData);
-
       history.push(`/game/play/${id}/${addPlayerData.addPlayerToGame.id}`);
     }
   });
@@ -41,7 +30,14 @@ const JoinGame: React.FC = () => {
         />
       </div>
       <div>
-        <button disabled={!name || loading} onClick={() => setLoading(true)}>
+        <button
+          disabled={!name || loading}
+          onClick={() =>
+            addPlayerToGame({
+              variables: { id, name },
+            })
+          }
+        >
           Join the game
         </button>
       </div>
