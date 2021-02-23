@@ -141,12 +141,23 @@ And then importing that where we create our server (`api/graphql/index.ts`):
 
 ```typescript
 import { ApolloServer } from "apollo-server-azure-functions";
-import { importSchema } from "graphql-import";
+import { ApolloServer } from "apollo-server-azure-functions";
+import { loadSchemaSync } from "@graphql-tools/load";
+import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
+import { addResolversToSchema } from "@graphql-tools/schema";
+import { join } from "path";
 import resolvers from "./resolvers";
 import { inMemoryDataSources } from "./data/index";
 
+const schema = loadSchemaSync(
+  join(__dirname, "..", "..", "graphql", "schema.graphql"),
+  {
+    loaders: [new GraphQLFileLoader()],
+  }
+);
+
 const server = new ApolloServer({
-  typeDefs: importSchema("./graphql/schema.graphql"),
+  schema: addResolversToSchema({ schema, resolvers }),
   resolvers,
   dataSources: inMemoryDataSources,
   context: {},

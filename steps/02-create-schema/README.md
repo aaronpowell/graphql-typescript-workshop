@@ -19,18 +19,21 @@ type Query {
 
 ## 2. Loading an external schema
 
-With our schema in a separate file, we need to load it into our server, and to do that we'll use the `graphql-import` npm package.
+With our schema in a separate file, we need to load it into our server, and to do that we'll use the `@graphql-tools/load`, `@graphql-tools/graphql-file-loader`, `@graphql-tools/schema` npm packages.
 
 ```bash
 $> cd api
-$> npm install --save graphql-import
+$> npm install --save @graphql-tools/load @graphql-tools/graphql-file-loader @graphql-tools/schema
 ```
 
 Now we can remove the embedded schema are load it up. Update the `api/graphql/index.ts` file to do that:
 
 ```typescript
 import { ApolloServer } from "apollo-server-azure-functions";
-import { importSchema } from "graphql-import";
+import { loadSchemaSync } from "@graphql-tools/load";
+import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
+import { addResolversToSchema } from "@graphql-tools/schema";
+import { join } from "path";
 
 // Provide resolver functions for your schema fields
 const resolvers = {
@@ -39,9 +42,15 @@ const resolvers = {
   },
 };
 
+const schema = loadSchemaSync(
+  join(__dirname, "..", "..", "graphql", "schema.graphql"),
+  {
+    loaders: [new GraphQLFileLoader()],
+  }
+);
+
 const server = new ApolloServer({
-  typeDefs: importSchema("./graphql/schema.graphql"),
-  resolvers,
+  schema: addResolversToSchema({ schema, resolvers }),
 });
 
 export default server.createHandler();
