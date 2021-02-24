@@ -155,3 +155,5 @@ Now when we run our application and open up the GraphQL playground, we can inspe
 ## Running The Application
 
 From a terminal run `npm start` from both the repository root and `api` folder to start the two servers, the web application will be on `http://localhost:3000` and the API on `http://localhost:7071`. Alternatively, you can use the VS Code launch of `Run full stack` to run both together with debuggers attached.
+
+[<< Step 1, Setup](../01-setup) | [Step 3, Implementing a data store >>](../03-data-storage)

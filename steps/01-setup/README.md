@@ -112,3 +112,5 @@ $> npm init -y
 $> npm install -D azure-function-core-tools@3
 $> npx func init --worker-runtime node --language typescript
 ```
+
+[Step 2, Creating a schema >>](../02-create-schema)

@@ -120,3 +120,5 @@ If we restart our server and run the query again, we'll get an expected result.
 ## Running The Application
 
 From a terminal run `npm start` from both the repository root and `api` folder to start the two servers, the web application will be on `http://localhost:3000` and the API on `http://localhost:7071`. Alternatively, you can use the VS Code launch of `Run full stack` to run both together with debuggers attached.
+
+[<< Step 5, Generating Types](../05-generating-types) | [Step 7, Mutations >>](../07-mutations)

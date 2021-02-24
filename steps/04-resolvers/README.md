@@ -133,6 +133,8 @@ You should now see all games and some of the information from the game.
 
 From a terminal run `npm start` from both the repository root and `api` folder to start the two servers, the web application will be on `http://localhost:3000` and the API on `http://localhost:7071`. Alternatively, you can use the VS Code launch of `Run full stack` to run both together with debuggers attached.
 
+[<< Step 3, Implementing a data store](../03-dta-storage) | [Step 5, Generating types >>](../05-generating-types)
+
 ## Sample game data
 
 ```javascript

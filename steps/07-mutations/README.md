@@ -111,3 +111,5 @@ mutation {
 ## Running The Application
 
 From a terminal run `npm start` from both the repository root and `api` folder to start the two servers, the web application will be on `http://localhost:3000` and the API on `http://localhost:7071`. Alternatively, you can use the VS Code launch of `Run full stack` to run both together with debuggers attached.
+
+[<< Step 6, Model Mapping](../06-model-mapping) | [Step 8, React Application >>](../08-react-app)

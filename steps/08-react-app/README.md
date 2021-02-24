@@ -229,3 +229,5 @@ $> npm install --save-dev @types/react-router-dom
 There are four skeleton pages that have been created in the [`pages`](pages) folder that represents the workflow of the game.
 
 Lastly, the `src/App.tsx` file has been modified to create the [Apollo client](https://www.apollographql.com/docs/react/get-started/#connect-your-client-to-react) and connect to our server (the backend uses [a proxy](https://create-react-app.dev/docs/proxying-api-requests-in-development) to simplify access) and setup the routing.
+
+[<< Step 7, Mutations](../07-mutations) | [Completed Application >>](../../completed)
