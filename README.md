@@ -18,7 +18,7 @@ If you have access to [GitHub Codespaces](https://github.com/codespaces) you can
 
 If you are unable to use the Devcontainer the following software is required:
 
-- [Node.js 12](https://nodejs.org/dist/latest-v12.x/)
+- [Node.js LTS (currently 14)](https://nodejs.org/en/download/)
 - A text editor
 - [Azure Function Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local?WT.mc_id=javascript-13112-aapowell#v2)
 
