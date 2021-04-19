@@ -16,7 +16,7 @@ const schema = loadSchemaSync(
 
 const server = new ApolloServer({
   schema: addResolversToSchema({ schema, resolvers }),
-  dataSources: inMemoryDataSources,
+  dataSources: cosmosDataSources,
   context: {},
 });
 

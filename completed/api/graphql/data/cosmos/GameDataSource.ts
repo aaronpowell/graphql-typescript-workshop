@@ -9,10 +9,10 @@ export class GameDataSource
   async getUserGames(userId: string) {
     const response = await this.findManyByQuery({
       query: `
-          SELECT c as Game
+          SELECT *
           FROM c
-          JOIN (SELECT p.id FROM p IN c.players WHERE p.id = @id) AS player
-          WHERE c.modelType = @type`,
+          WHERE c.modelType = @type
+          AND EXISTS(SELECT p.id FROM p IN c.players WHERE p.id = @id)`,
       parameters: [
         { name: "@id", value: userId },
         { name: "@type", value: ModelType.Game },
