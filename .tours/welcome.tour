@@ -1,0 +1,31 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Welcome",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "Welcome to the GraphQL and TrypeScript workshop.\n\nIn this workshop we're going to build an application, piece by piece, using GraphQL, TypeScript, Azure Functions and React."
+    },
+    {
+      "file": "README.md",
+      "description": "The `README` will guide you through how the structure of their repository, make sure you have a read of it first.",
+      "line": 1,
+      "title": "The README"
+    },
+    {
+      "directory": "steps",
+      "description": "The workshop is broken into multiple steps, you'll find them in the [`steps`](steps) folder of the rep.\n\nEach step builds on the previous step, so if you ever get lost, you can always sneak a peak at the next step to see how it's done.",
+      "title": "Workshop Structure"
+    },
+    {
+      "file": "README.md",
+      "description": "I recommend you use [VS Code Devcontainers](https://code.visualstudio.com/docs/remote/containers?WT.mc_id=javascript-13112-aapowell) to do the workshop. It'll take care of installing all the software needed for the step, setup the VS Code extensions that are useful, and get you up and running fast.",
+      "line": 11,
+      "title": "Setup"
+    },
+    {
+      "title": "Get Started",
+      "description": "It's time to get started, let's open `steps/01-setup` in VS Code."
+    }
+  ]
+}
