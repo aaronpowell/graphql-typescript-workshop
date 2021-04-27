@@ -20,7 +20,7 @@
     {
       "file": "api/graphql/index.ts",
       "description": "# Update the Fuction\n\nThe Function template has a lot of boilerplate code we can get rid of, we'll delete it all and replace it with the following:\n\n```typescript\nimport { ApolloServer, gql } from \"apollo-server-azure-functions\";\n\n// Construct a schema, using GraphQL schema language\nconst typeDefs = gql`\n  type Query {\n    hello: String\n  }\n`;\n\n// Provide resolver functions for your schema fields\nconst resolvers = {\n  Query: {\n    hello: () => \"Hello from our GraphQL backend!\",\n  },\n};\n\nconst server = new ApolloServer({ typeDefs, resolvers });\n\nexport default server.createHandler();\n```",
-      "line": 19,
+      "line": 37,
       "selection": {
         "start": {
           "line": 1,
@@ -34,7 +34,7 @@
     },
     {
       "file": "api/graphql/index.ts",
-      "description": "# Run the server\n\nWe're now ready to run the GraphQL server. We can launch it from the command line\n\n>> cd api\n>> npm start\n\nAnd then navigate to http://localhost:7071/api/graphql to access the GraphQL playground.\n\nFrom the playground you can query against the GraphQL server, with a query like so:\n\n```graphql\nquery {\n    hello\n}\n```",
+      "description": "# Run the server\n\nWe're now ready to run the GraphQL server. We can launch it from the command line\n\nStart by going to the `api` folder\n\n>> cd api\n\nWe can then launch the Azure Functions using the `npm start` command. This will compile the TypeScript to JavaScript and launch the Functions local tooling.\n\n>> npm start\n\nAnd then navigate to http://localhost:7071/api/graphql to access the GraphQL playground.\n\nFrom the playground you can query against the GraphQL server, with a query like so:\n\n```graphql\nquery {\n    hello\n}\n```",
       "line": 1
     }
   ]
