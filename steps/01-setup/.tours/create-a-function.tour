@@ -1,0 +1,25 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Create a Function",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "Welcome to the start of our application. For this step we'll scaffold up an Azure Function that is capable of hosting a GraphQL server."
+    },
+    {
+      "file": "api/package.json",
+      "description": "# Install Apollo\n\nThe first step is to add a new dependency to our `api` project's `package.json`. We'll install the [Azure Functions for Apollo](https://www.apollographql.com/docs/apollo-server/deployment/azure-functions/) npm package as well as the `graphql` package.\n\nLet's make sure we're in the `api` folder\n\n>> cd api\n\nAnd now we can install the dependencies.\n\n>> npm install apollo-server-azure-functions graphql --save",
+      "line": 14
+    },
+    {
+      "file": "api/package.json",
+      "description": "# Create the Function\n\nWith the dependency installed, we can now create a new Function using the `Http Trigger` template.\n\n>> npx func new --template \"Http Trigger\" --name graphql\n\n_Note: If you are prompted to `Select a number for worker runtime`, cancel the operation and make sure you're in the `api` folder first._\n\n>> cd api",
+      "line": 20
+    },
+    {
+      "file": "api/graphql/index.ts",
+      "description": "# Finish\n\nOur Function is ready, next we'll turn it from the template into a GraphQL server.",
+      "line": 1
+    }
+  ]
+}

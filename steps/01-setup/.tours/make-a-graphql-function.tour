@@ -1,0 +1,41 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Make a GraphQL Function",
+  "steps": [
+    {
+      "file": "api/graphql/function.json",
+      "description": "# Updating Function config\n\nThe first thing we need to do is change the way Azure Functions will send the HTTP response. Apollo requires it to be returned from the Function, not using an output variable, so we need to change the `name` from `res` to `$return`.\n\n```js\n\"name\": \"$return\"\n```",
+      "line": 16,
+      "selection": {
+        "start": {
+          "line": 16,
+          "character": 7
+        },
+        "end": {
+          "line": 16,
+          "character": 20
+        }
+      }
+    },
+    {
+      "file": "api/graphql/index.ts",
+      "description": "# Update the Fuction\n\nThe Function template has a lot of boilerplate code we can get rid of, we'll delete it all and replace it with the following:\n\n```typescript\nimport { ApolloServer, gql } from \"apollo-server-azure-functions\";\n\n// Construct a schema, using GraphQL schema language\nconst typeDefs = gql`\n  type Query {\n    hello: String\n  }\n`;\n\n// Provide resolver functions for your schema fields\nconst resolvers = {\n  Query: {\n    hello: () => \"Hello from our GraphQL backend!\",\n  },\n};\n\nconst server = new ApolloServer({ typeDefs, resolvers });\n\nexport default server.createHandler();\n```",
+      "line": 19,
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 17,
+          "character": 28
+        }
+      }
+    },
+    {
+      "file": "api/graphql/index.ts",
+      "description": "# Run the server\n\nWe're now ready to run the GraphQL server. We can launch it from the command line\n\n>> cd api\n>> npm start\n\nAnd then navigate to http://localhost:7071/api/graphql to access the GraphQL playground.\n\nFrom the playground you can query against the GraphQL server, with a query like so:\n\n```graphql\nquery {\n    hello\n}\n```",
+      "line": 1
+    }
+  ]
+}

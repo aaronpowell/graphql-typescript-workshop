@@ -19,7 +19,8 @@
     "esbenp.prettier-vscode",
     "ms-vsliveshare.vsliveshare-pack",
     "visualstudioexptteam.vscodeintellicode",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "vsls-contrib.codetour"
   ],
 
   // Use 'postCreateCommand' to run commands after the container is created.
