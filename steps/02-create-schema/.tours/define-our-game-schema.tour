@@ -1,0 +1,66 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Define our game schema",
+  "steps": [
+    {
+      "file": "api/graphql/schema.graphql",
+      "description": "# New schema\n\nSo far our schema has been just a dummy one, but it's tiem to create a schema that will represent our application. To do that we're going to replace what we've got with some new types and query.",
+      "line": 1,
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 4,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "api/graphql/schema.graphql",
+      "description": "# Question type\n\nThe first type we'll model is the `Question`'s that appear in our game.\n\n```graphql\ntype Question {\n  id: ID!\n  question: String!\n  correctAnswer: String!\n  answers: [String!]!\n}\n```\n\nIt has fields to track the ID of the question, the question the user will be asked and the correct + incorrect answers.",
+      "line": 4,
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 4,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "api/graphql/schema.graphql",
+      "description": "# Game type\n\nNext we'll model the game. Each game will have a `state` associated with it, which tells us where the game is up to, and that we can model as an enum.\n\n```graphql\ntype Game {\n  id: ID!\n  state: GameState\n  players: [Player!]!\n  questions: [Question!]!\n}\n\nenum GameState {\n  WaitingForPlayers\n  Started\n  Completed\n}\n```\n\nIt has fields to track the ID of the question, the question the user will be asked and the correct + incorrect answers.",
+      "line": 7
+    },
+    {
+      "file": "api/graphql/schema.graphql",
+      "description": "# Player type\n\nFinally, we're going to need to model a player and the answers they have supplied to the game.\n\n```graphql\ntype Player {\n  id: ID!\n  name: String!\n  game(gameId: ID): Game!\n  games: [Game!]!\n}\n\ntype PlayerResult {\n  name: String!\n  question: String!\n  submittedAnswer: String!\n  correctAnswer: String!\n  answers: [String!]!\n  correct: Boolean\n}\n```\n",
+      "line": 19
+    },
+    {
+      "file": "api/graphql/schema.graphql",
+      "description": "# Queries\n\nWith all the types defined, we need to have something in our schema that defines how you're going to access those types, and that's what our `Query` type is for.\n\n```graphql\ntype Query {\n  game(id: ID!): Game\n  games: [Game!]!\n  playerResults(gameId: ID!, playerId: ID!): [PlayerResult!]!\n}\n\nschema {\n  query: Query\n}\n```",
+      "line": 33
+    },
+    {
+      "file": "api/graphql/index.ts",
+      "description": "# Updating the resolver\n\nWith our new schema defined, the resolver no longer works, we don't have a `hello` field to query. Let's just create a dummy resolver for now.\n\n```typescript\nQuery: { }\n```",
+      "line": 9,
+      "selection": {
+        "start": {
+          "line": 9,
+          "character": 3
+        },
+        "end": {
+          "line": 11,
+          "character": 4
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Create a schema",
+  "steps": [
+    {
+      "file": "api/graphql/index.ts",
+      "description": "# Extract the schema\n\nWe'll start off by extracting the inline schema from our TypeScript code and making a schema file.\n\n>> touch api/graphql/schema.graphql\n",
+      "line": 4
+    },
+    {
+      "file": "api/graphql/schema.graphql",
+      "description": "# Define the schema\n\nThe GraphQL schema file can be used to define the schema that was previously inline:\n\n```graphql\ntype Query {\n    hello: String\n}\n```",
+      "line": 3
+    },
+    {
+      "file": "api/package.json",
+      "description": "# Install dependencies\n\nTo load our schema, we'll need to add some dependencies to our `package.json` file. We'll use the `@graphql-tools` set of helpers to load the schema file and convert it into the GraphQL object model.\n\n>> cd api && npm install --save-dev @graphql-tools/load @graphql-tools/graphql-file-loader @graphql-tools/schema\n",
+      "line": 20
+    },
+    {
+      "file": "api/graphql/index.ts",
+      "description": "# Update our server\n\nWith the dependencies installed, we can update the server to now use the external schema file.\n\n```typescript\nimport { ApolloServer } from \"apollo-server-azure-functions\";\nimport { loadSchemaSync } from \"@graphql-tools/load\";\nimport { GraphQLFileLoader } from \"@graphql-tools/graphql-file-loader\";\nimport { addResolversToSchema } from \"@graphql-tools/schema\";\nimport { join } from \"path\";\n\n// Provide resolver functions for your schema fields\nconst resolvers = {\n  Query: {\n    hello: () => \"Hello from our GraphQL backend!\",\n  },\n};\n\nconst schema = loadSchemaSync(\n  join(__dirname, \"..\", \"..\", \"graphql\", \"schema.graphql\"),\n  {\n    loaders: [new GraphQLFileLoader()],\n  }\n);\n\nconst server = new ApolloServer({\n  schema: addResolversToSchema({ schema, resolvers }),\n});\n\nexport default server.createHandler();\n```",
+      "line": 25,
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 20,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "api/graphql/index.ts",
+      "description": "# Dependencies\n\nThese are the new dependencies that are needed.\n\n`@graphql-tools/load` is used to load the schema from a location. We're using the synchronous version, not the asynchronous one as we need to have it available for the default export of the module.\n\n`@graphql-tools/graphql-file-loader` tells the `load` module that format the source is in, is it a file, URL, etc. There are other loaders available that we're not using.\n\n`@graphql-tools/schema` will take the loaded schema file (which is now in the GraphQL object model) and then add the resolvers defined to it, so the server knows what to do when a query (ore mutation) is received.\n\n`path` is a native node module that is used to find the file on disk and join the segments correctly.",
+      "line": 5,
+      "selection": {
+        "start": {
+          "line": 2,
+          "character": 1
+        },
+        "end": {
+          "line": 5,
+          "character": 29
+        }
+      }
+    },
+    {
+      "file": "api/graphql/index.ts",
+      "description": "# Loading the schema\n\nHere we're loading the schema file from disk for use in the application. As this is a compiled TypeScript to JavaScript application, the `schema.graphql` file we need won't be in the same location as the JS file that's run, so we're going to do some directory walking to find it.\n\nTo avoid any problems with cross-platform paths, we use the `join` function to put in the appropriate path seperators.",
+      "line": 19,
+      "selection": {
+        "start": {
+          "line": 14,
+          "character": 1
+        },
+        "end": {
+          "line": 19,
+          "character": 3
+        }
+      }
+    },
+    {
+      "file": "api/graphql/index.ts",
+      "description": "# Run our server\n\nWith the resolvers merged with the schema, using the `addResolversToSchema` method, we can run the application and it'll use the new on-disk schema.\n\n>> npm start\n",
+      "line": 22
+    }
+  ]
+}
