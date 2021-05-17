@@ -1,0 +1,51 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Implement resolvers",
+  "steps": [
+    {
+      "file": "api/graphql/resolvers.ts",
+      "description": "# `games` Resolver\n\nWe need a resolver that'll use the data sources previously created and return the `games` that a client is requested. This is added to the `Query` resolver type, which matches the way the schema is defined.\n\n```typescript\n  Query: {\n    games(_, __, { dataSources }) {\n      return dataSources.game.getGames();\n    },\n  },\n```\n\nYou'll notice that we're using the `dataSources`, which comes via the third argument to the `games` function. This is the Apollo Context that we've added the data sources to when the server first starts up.",
+      "line": 6,
+      "selection": {
+        "start": {
+          "line": 2,
+          "character": 3
+        },
+        "end": {
+          "line": 2,
+          "character": 11
+        }
+      }
+    },
+    {
+      "file": "api/graphql/resolvers.ts",
+      "description": "# Getting a single game\n\nIf we want a single game, we need to handle the `game(id: ID!)` query, which means another resolver method.\n\n```typescript\ngame(_, { id }, { dataSources }) {\n  return dataSources.game.getGame(id);\n},\n```\n\nThe `id` parameter which is passed to the query comes in via the second argument of the resolver function.",
+      "line": 7,
+      "selection": {
+        "start": {
+          "line": 5,
+          "character": 7
+        },
+        "end": {
+          "character": 7,
+          "line": 5
+        }
+      }
+    },
+    {
+      "file": "api/graphql/resolvers.ts",
+      "description": "# Player results\n\nThe last thing our resolver needs to handle is getting the answers a player has submitted, which is the `playerResults` resolver. This will require us to unpack some of the data off the `game` object and generate a new structure.\n\n```typescript\n    async playerResults(_, { gameId, playerId }, { dataSources }) {\n      const game = await dataSources.game.getGame(gameId);\n\n      const playerAnswers = game.answers.filter((a) => a.user.id === playerId);\n\n      return playerAnswers.map((answer) => {\n        const question = answer.question;\n        return {\n          name: answer.user.name,\n          answers: arrayRandomiser(\n            question.incorrect_answers.concat(question.correct_answer)\n          ),\n          question: question.question,\n          correctAnswer: question.correct_answer,\n          submittedAnswer: answer.answer,\n          correct: answer.answer === question.correct_answer,\n        };\n      });\n    },\n```\n\nNotice that this time the function is an `async` function? That's because Apollo resolvers can return Promise _or_ an object. In our previous two, we didn't need to do any data mapping so we didn't have to `await` the Promise, but now we have to.",
+      "line": 8,
+      "selection": {
+        "start": {
+          "line": 8,
+          "character": 7
+        },
+        "end": {
+          "line": 8,
+          "character": 7
+        }
+      }
+    }
+  ]
+}
