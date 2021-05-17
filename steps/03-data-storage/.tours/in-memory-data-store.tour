@@ -1,0 +1,56 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "In memory data store",
+  "steps": [
+    {
+      "file": "api/trivia.json",
+      "description": "# Sample data\n\nHere we've got some questionst that we'll use for our game. These will be loaded by an in-memory data store that we're going to build, but you can create more presistence with the [CosmosDB store](/README-DataSource-Cosmos.md) if you'd prefer.\n\nLet's start by creating some interfaces for our data sources.\n\n>> mkdir --parents api/graphql/data && touch api/graphql/data/types.ts\n",
+      "line": 1
+    },
+    {
+      "file": "api/graphql/data/types.ts",
+      "description": "# Defining models\n\nLet's define a base type for our data models, as well as an enum that will make it easy for us to determine the _type_ of the model that we're working with.\n\n```typescript\nexport enum ModelType {\n  Question = \"Question\",\n  User = \"User\",\n  UserAnswer = \"UserAnswer\",\n  Game = \"Game\",\n}\n\ntype Model = {\n  id: string;\n  modelType: ModelType;\n};\n```",
+      "line": 11
+    },
+    {
+      "file": "api/graphql/data/types.ts",
+      "description": "# Question model\n\nThe first data we'll model is the question that was in the `trivia.json` file. We'll create a TypeScript type for that:\n\n```typescript\nexport type QuestionModel = {\n  question: string;\n  category: string;\n  incorrect_answers: string[];\n  correct_answer: string;\n  type: string;\n  difficulty: \"easy\" | \"medium\" | \"hard\";\n} & Model;\n```",
+      "line": 19
+    },
+    {
+      "file": "api/graphql/data/types.ts",
+      "description": "# Defining a data store\n\nApollo provides us with a [data sources pattern](https://www.apollographql.com/docs/apollo-server/data/data-sources/) which is useful for defining how we're working with underlying data sources. Let's start defining a data source for questions:\n\n```typescript\nexport interface IQuestionDataSource {\n  getQuestion(id: string): Promise<QuestionModel>;\n  getQuestions(): Promise<QuestionModel[]>;\n}\n```",
+      "line": 23
+    },
+    {
+      "file": "api/graphql/data/types.ts",
+      "description": "# Implement data source\n\nWith our types setup, we can implement the data source. We'll create a new file for that:\n\n>> mkdir --parents api/graphql/data/inMemory && touch api/graphql/data/inMemory/QuestionDataSource.ts",
+      "line": 24
+    },
+    {
+      "file": "api/graphql/data/inMemory/QuestionDataSource.ts",
+      "description": "# Question data source\n\nThe `QuestionDataSource` is going to implement the `IQuestionDataSource` interface we've just created:\n\n```typescript\nimport { IQuestionDataSource, QuestionModel } from \"../types\";\n\nexport class QuestionDataSource implements IQuestionDataSource {\n  // todo\n}\n```",
+      "line": 5
+    },
+    {
+      "file": "api/graphql/data/inMemory/QuestionDataSource.ts",
+      "description": "# Using an Apollo data source\n\nSince we're using the Apollo data source model, it'll be useful to install the `apollo-datasource` npm package, as that gives us some building blocks for caching, should we want it.\n\n>> cd api && npm install --save apollo-datasource\n\nOnce the package is installed, we can reference it, and update our type to use it.\n\n```typescript\nimport { IQuestionDataSource, QuestionModel } from \"../types\";\nimport { DataSource } from \"apollo-datasource\";\n\nexport class QuestionDataSource\n  extends DataSource\n  implements IQuestionDataSource {\n  // todo\n}\n```",
+      "line": 8,
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 6,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "api/graphql/data/inMemory/QuestionDataSource.ts",
+      "description": "# Implemented data source\n\nThe final piece of the puzzle is to implement our data source. We need to load the `trivia.json` file in as the questions and implement the two methods of our interface, `getQuestion` and `getQuestions`.\n\nCheck out the `README.md` for some hints on how to do it.",
+      "line": 7
+    }
+  ]
+}
