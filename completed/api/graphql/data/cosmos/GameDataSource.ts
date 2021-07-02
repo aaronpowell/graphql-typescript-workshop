@@ -5,7 +5,8 @@ import { IGameDataSource, GameModel, ModelType, QuestionModel } from "../types";
 
 export class GameDataSource
   extends CosmosDataSource<GameModel>
-  implements IGameDataSource {
+  implements IGameDataSource
+{
   async getUserGames(userId: string) {
     const response = await this.findManyByQuery({
       query: `
@@ -59,7 +60,9 @@ export class GameDataSource
   }
 
   async updateGame(game: GameModel) {
-    const response = await this.updateOne(game);
+    const response = await this.container
+      .item(game.id, game.modelType)
+      .replace(game);
 
     return response.resource;
   }
