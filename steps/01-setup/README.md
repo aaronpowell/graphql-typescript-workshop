@@ -109,7 +109,7 @@ Next, a basic [Azure Function](https://docs.microsoft.com/azure/azure-functions?
 ```bash
 $> mkdir api
 $> npm init -y
-$> npm install -D azure-function-core-tools@3
+$> npm install -D azure-functions-core-tools@3
 $> npx func init --worker-runtime node --language typescript
 ```
 
