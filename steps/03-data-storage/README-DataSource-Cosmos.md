@@ -2,7 +2,7 @@
 
 Since our default implementation of the data sources are in memory and not persistent, let's have a look at how to create a persistent store. For this, we'll use [CosmosDB](https://azure.microsoft.com/services/cosmos-db/?WT.mc_id=javascript-13112-aapowell) with its SQL API.
 
-_If you don't have an existing Azure account, you can [sign up for free](https://azure.microsoft.com/free/?WT.mc_id=javascript-13112-aapowell). I'd also recommend checking out the [CosmosDB Serverless preview](https://docs.microsoft.com/azure/cosmos-db/serverless?WT.mc_id=javascript-13112-aapowell) as the hosting option._
+_If you don't have an existing Azure account, you can [sign up for free](https://azure.microsoft.com/free/?WT.mc_id=javascript-13112-aapowell). I'd also recommend checking out [CosmosDB Serverless](https://docs.microsoft.com/azure/cosmos-db/serverless?WT.mc_id=javascript-13112-aapowell) as the hosting option._
 
 ## 1. The CosmosDB data source
 
@@ -19,12 +19,14 @@ We'll implement our `QuestionDataSource` against CosmosDB with a new file `api/g
 
 ```typescript
 import { CosmosDataSource } from "apollo-datasource-cosmosdb";
+import { ApolloContext } from "../../apolloContext";
 import { arrayRandomiser } from "../../../utils";
 import { ModelType, IQuestionDataSource, QuestionModel } from "../types";
 
 export class QuestionDataSource
-  extends CosmosDataSource<QuestionModel>
-  implements IQuestionDataSource {
+  extends CosmosDataSource<QuestionModel, ApolloContext>
+  implements IQuestionDataSource
+{
   async getQuestions(): Promise<QuestionModel[]> {
     const questions = await this.findManyByQuery({
       query: "SELECT * FROM c WHERE c.modelType = @type",
@@ -48,8 +50,10 @@ To use the data source, we'll need to add it to our exports in `api/graphql/data
 ```typescript
 import { CosmosClient } from "@azure/cosmos";
 import { QuestionDataSource as CosmosQuestionDataSource } from "./cosmos/QuestionDataSource";
+import { DataSources } from "apollo-server-core/src/graphqlOptions";
+import { ApolloContext } from "../apolloContext";
 
-export const cosmosDataSources = () => {
+export const cosmosDataSources: () => DataSources<ApolloContext> = () => {
   const client = new CosmosClient(process.env.CosmosDB);
   const container = client.database("trivia").container("game");
 

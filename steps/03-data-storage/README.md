@@ -132,7 +132,9 @@ With our data source ready it's time to make it available to Apollo. We'll start
 
 ```typescript
 import { QuestionDataSource as InMemoryQuestionDataSource } from "./inMemory/QuestionDataSource";
-export const inMemoryDataSources = () => ({
+import { DataSources } from "apollo-server-core/src/graphqlOptions";
+import { ApolloContext } from "../apolloContext";
+export const inMemoryDataSources: () => DataSources<ApolloContext> = () => ({
   question: new InMemoryQuestionDataSource(),
 });
 ```
