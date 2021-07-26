@@ -150,7 +150,7 @@ const resolvers = {
 };
 ```
 
-Now when we run our application and open up the GraphQL playground, we can inspect our more complex schema. You can also write queries against the new schema, but you'll find that you get errors because our resolvers aren't implemented.
+Now when we run our application and open up the Banana Cake Pop, we can inspect our more complex schema. You can also write queries against the new schema, but you'll find that you get errors because our resolvers aren't implemented.
 
 ## Running The Application
 
