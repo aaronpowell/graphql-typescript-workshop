@@ -82,12 +82,20 @@ export default server.createHandler();
 
 ## 4. Test our server
 
-It's now time to test our server. Run the Functions app (see below) and navigate to http://localhost:7071/api/graphql. You'll be presented with the [GraphQL Playground](https://www.apollographql.com/docs/apollo-server/testing/graphql-playground/) in which you can run our query:
+It's now time to test our server. Run the Functions app (see below) and we can query the server using a tool like `cURL` or an IDE like [Banana Cake Pop](https://chillicream.com/docs/bananacakepop). Here's a query we can execute against our server:
 
 ```graphql
 query {
   hello
 }
+```
+
+_To run from `cURL` you can execute the following:_
+
+```bash
+curl 'http://localhost:7071/api/graphql' \
+     -H 'content-type: application/json' \
+     --data-raw '{"query":"{hello}"}'
 ```
 
 And you'll see an output with the message created.

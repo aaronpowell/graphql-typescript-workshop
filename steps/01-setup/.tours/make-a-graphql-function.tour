@@ -34,7 +34,7 @@
     },
     {
       "file": "api/graphql/index.ts",
-      "description": "# Run the server\n\nWe're now ready to run the GraphQL server. We can launch it from the command line\n\nStart by going to the `api` folder\n\n>> cd api\n\nWe can then launch the Azure Functions using the `npm start` command. This will compile the TypeScript to JavaScript and launch the Functions local tooling.\n\n>> npm start\n\nAnd then navigate to http://localhost:7071/api/graphql to access the GraphQL playground.\n\nFrom the playground you can query against the GraphQL server, with a query like so:\n\n```graphql\nquery {\n    hello\n}\n```",
+      "description": "# Run the server\n\nWe're now ready to run the GraphQL server. We can launch it from the command line\n\nStart by going to the `api` folder\n\n>> cd api\n\nWe can then launch the Azure Functions using the `npm start` command. This will compile the TypeScript to JavaScript and launch the Functions local tooling.\n\n>> npm start\n\nNow you can use a tool like Banana Cake Pop to access http://localhost:7071/api/graphql and query the server.\n\nExecute the following query:\n\n```graphql\nquery {\n    hello\n}\n```",
       "line": 1
     }
   ]
