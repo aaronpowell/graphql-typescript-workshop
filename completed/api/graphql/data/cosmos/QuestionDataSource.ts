@@ -1,10 +1,10 @@
-import { DataSource } from "apollo-datasource";
 import { CosmosDataSource } from "apollo-datasource-cosmosdb";
 import { arrayRandomiser } from "../../../utils";
+import { ApolloContext } from "../../apolloContext";
 import { ModelType, IQuestionDataSource, QuestionModel } from "../types";
 
 export class QuestionDataSource
-  extends CosmosDataSource<QuestionModel>
+  extends CosmosDataSource<QuestionModel, ApolloContext>
   implements IQuestionDataSource {
   async getQuestions(): Promise<QuestionModel[]> {
     const questions = await this.findManyByQuery({

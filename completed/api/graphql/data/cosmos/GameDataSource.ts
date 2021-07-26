@@ -1,10 +1,11 @@
 import { CosmosDataSource } from "apollo-datasource-cosmosdb";
 import { arrayRandomiser, idGenerator } from "../../../utils";
+import { ApolloContext } from "../../apolloContext";
 import { GameState } from "../../generated";
 import { IGameDataSource, GameModel, ModelType, QuestionModel } from "../types";
 
 export class GameDataSource
-  extends CosmosDataSource<GameModel>
+  extends CosmosDataSource<GameModel, ApolloContext>
   implements IGameDataSource
 {
   async getUserGames(userId: string) {
