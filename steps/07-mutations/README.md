@@ -94,7 +94,7 @@ const resolvers: Resolvers = {
 
 ## 3. Testing our mutation
 
-Run the GraphQL server and navigate to the GraphQL Playground then execute a mutation to create a game:
+Run the GraphQL server and navigate to the GraphQL IDE then execute a mutation to create a game:
 
 ```graphql
 mutation {
