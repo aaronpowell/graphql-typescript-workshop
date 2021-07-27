@@ -1,4 +1,6 @@
 import { CosmosClient } from "@azure/cosmos";
+import { DataSources } from "apollo-server-core/src/graphqlOptions";
+import { ApolloContext } from "../apolloContext";
 import { GameState } from "../generated";
 import { GameDataSource as CosmosGameDataSource } from "./cosmos/GameDataSource";
 import { QuestionDataSource as CosmosQuestionDataSource } from "./cosmos/QuestionDataSource";
@@ -8,7 +10,7 @@ import { QuestionDataSource as InMemoryQuestionDataSource } from "./inMemory/Que
 import { UserDataSource as InMemoryUserDataSource } from "./inMemory/UserDataSource";
 import { GameModel, ModelType, UserModel } from "./types";
 
-export const cosmosDataSources = () => {
+export const cosmosDataSources: () => DataSources<ApolloContext> = () => {
   const client = new CosmosClient(process.env.CosmosDB);
   const container = client.database("trivia").container("game");
 
@@ -428,7 +430,7 @@ const games: GameModel[] = [
   },
 ];
 const users: UserModel[] = [];
-export const inMemoryDataSources = () => ({
+export const inMemoryDataSources: () => DataSources<ApolloContext> = () => ({
   user: new InMemoryUserDataSource(users),
   question: new InMemoryQuestionDataSource(),
   game: new InMemoryGameDataSource(games),
