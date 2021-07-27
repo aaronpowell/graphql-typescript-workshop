@@ -109,7 +109,7 @@ const resolvers = {
 
 ## 5. Testing our queries
 
-We haven't got a way to create and play games yet, so grab a [sample game](Sample-Data.md) and open up the GraphQL playground and let's try a query:
+We haven't got a way to create and play games yet, so grab a [sample game](Sample-Data.md) and open up your GraphQL IDE and let's try a query:
 
 ```graphql
 query {
