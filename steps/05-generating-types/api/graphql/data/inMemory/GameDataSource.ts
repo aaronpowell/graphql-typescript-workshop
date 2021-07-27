@@ -1,5 +1,7 @@
 import { DataSource } from "apollo-datasource";
-import { IGameDataSource, GameModel, QuestionModel } from "../types";
+import { idGenerator } from "../../../utils";
+import { GameState } from "../../generated";
+import { IGameDataSource, GameModel, ModelType, QuestionModel } from "../types";
 
 export class GameDataSource extends DataSource implements IGameDataSource {
   constructor(private games: GameModel[]) {
