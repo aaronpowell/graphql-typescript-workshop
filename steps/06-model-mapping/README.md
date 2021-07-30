@@ -4,29 +4,9 @@ The types generated in the previous exercise gives us a level of type safety aga
 
 The good news is that we can tackle this using graphql-code-generator by giving it some information about _our_ types, not just the types in the GraphQL schema.
 
-## 1. Defining a context type
+## 1. Telling the code generator about our context
 
-Data sources in Apollo are part of the `context` that is available within a request, and this is something that we probably want strongly typed. Let's start by defining a type for our context in `api/graphql/apolloContext.ts`:
-
-```typescript
-import {
-  IGameDataSource,
-  IQuestionDataSource,
-  IUserDataSource,
-} from "./data/types";
-
-export type ApolloContext = {
-  dataSources: {
-    user: IUserDataSource;
-    game: IGameDataSource;
-    question: IQuestionDataSource;
-  };
-};
-```
-
-## 2. Telling the code generator about our context
-
-With the context created, you _could_ go and put `{ dataSources }: ApolloContext` on each resolver function, but it'd be better to make the generated types aware of that, which we can do by editing the `config.yml` file to add a `config` node:
+We previously created the `ApolloContext`, but only our data sources know about it, so how do we make the resolvers know too? You _could_ go and put `{ dataSources }: ApolloContext` on each resolver function, but it'd be better to make the generated types aware of that, which we can do by editing the `config.yml` file to add a `config` node:
 
 ```yml
 overwrite: true
@@ -48,7 +28,7 @@ For the config we're providing a `contextType` and pointing that to the file, `.
 
 Run the generation script again and now look at the resolvers, `dataSources` will be strongly typed and we can see all the types cascade down... But this has introduced another problem, we're returning the data store model type, not the GraphQL type, and we have a mismatch.
 
-## 3. Model mapping
+## 2. Model mapping
 
 To tackle this we're going to need to tell the generated types about the different models that we have and when to use which one, and we do that by providing a `mappers` config:
 
@@ -74,7 +54,7 @@ generates:
 
 The syntax is similar to the context, but that the type our resolvers are going to use parent types, which we will in turn map to their schema types (if the properties aren't the same). This means that we can now return `GameModel` from the `game` query, and its fields will be mapped on to a `Game` schema type, and if there are properties that aren't meant to be exposed, they'll be ignored.
 
-## 4. Handling custom parents
+## 3. Handling custom parents
 
 With these changes in place to use our data models in conjunction with the GraphQL types we have everything working, so let's test a query. Launch the GraphQL server and run the following query:
 

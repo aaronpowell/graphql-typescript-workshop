@@ -108,7 +108,8 @@ import { IQuestionDataSource, QuestionModel } from "../types";
 
 export class QuestionDataSource
   extends DataSource
-  implements IQuestionDataSource {
+  implements IQuestionDataSource
+{
   #questions: QuestionModel[];
   constructor() {
     super();
@@ -134,7 +135,7 @@ With our data source ready it's time to make it available to Apollo. We'll start
 import { QuestionDataSource as InMemoryQuestionDataSource } from "./inMemory/QuestionDataSource";
 import { DataSources } from "apollo-server-core/src/graphqlOptions";
 import { ApolloContext } from "../apolloContext";
-export const inMemoryDataSources: () => DataSources<ApolloContext> = () => ({
+export const inMemoryDataSources = () => ({
   question: new InMemoryQuestionDataSource(),
 });
 ```
@@ -167,6 +168,34 @@ const server = new ApolloServer({
 
 export default server.createHandler();
 ```
+
+But this will show up with a type error for the `inMemoryDataSource`, we need to make it a type of `() => DataSources<TContext>`, but what is the `TContext` going to be?
+
+Data sources in Apollo are part of the `context` that is available within a request, and this is something that we probably want strongly typed. Let's start by defining a type for our context in `api/graphql/apolloContext.ts`:
+
+```typescript
+import {
+  IGameDataSource,
+  IQuestionDataSource,
+  IUserDataSource,
+} from "./data/types";
+
+export type ApolloContext = {
+  dataSources: {
+    user: IUserDataSource;
+    game: IGameDataSource;
+    question: IQuestionDataSource;
+  };
+};
+```
+
+Now, we can go and strongly type of `inMemoryContext`:
+
+```typescript
+export const inMemoryDataSources: () => DataSources<ApolloContext> = () => ({
+```
+
+And our type system is happy again!
 
 ## 5. Implement the remaining data stores
 
