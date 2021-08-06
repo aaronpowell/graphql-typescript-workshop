@@ -40,16 +40,23 @@ type Query {
   playerResults(gameId: ID!, playerId: ID!): [PlayerResult!]!
 }
 
+input AddPlayerToGame {
+  gameId: ID!
+  playerName: String!
+}
+
+input SubmitAnswer {
+  gameId: ID!
+  playerId: ID!
+  questionId: ID!
+  answer: String!
+}
+
 type Mutation {
   createGame: Game
-  addPlayerToGame(id: ID!, name: String!): Player!
+  addPlayerToGame(input: AddPlayerToGame): Player!
   startGame(id: ID!): Game
-  submitAnswer(
-    gameId: ID!
-    playerId: ID!
-    questionId: ID!
-    answer: String!
-  ): Player
+  submitAnswer(input: SubmitAnswer): Player
 }
 
 schema {

@@ -1,5 +1,5 @@
 mutation addPlayerScreen($id: ID!, $name: String!) {
-  addPlayerToGame(id: $id, name: $name) {
+  addPlayerToGame(input: { gameId: $id, playerName: $name }) {
     id
   }
   startGame(id: $id) {

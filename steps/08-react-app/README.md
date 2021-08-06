@@ -136,9 +136,8 @@ import { CreateGameDocument } from "../generated";
 
 const CreateGame: React.FC = () => {
   const [creating, setCreating] = useState(false);
-  const [createGame, { loading, called, data, error }] = useMutation(
-    CreateGameDocument
-  );
+  const [createGame, { loading, called, data, error }] =
+    useMutation(CreateGameDocument);
 
   const history = useHistory();
 
@@ -177,7 +176,7 @@ We'll create a new mutation operation that will combine these two into a single 
 
 ```graphql
 mutation addPlayerScreen($id: ID!, $name: String!) {
-  addPlayerToGame(id: $id, name: $name) {
+  addPlayerToGame(input: { gameId: $id, playerName: $name }) {
     id
   }
   startGame(id: $id) {

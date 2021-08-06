@@ -9,16 +9,23 @@ When it comes to thinking about type-safety in GraphQL, mutations are an area th
 For our application there are four different reasons in which we'd like to change data, creating a game, adding a player to a game, starting the game and answering a question. We can model these mutations in our schema (`api/graphql/schema.graphql`):
 
 ```graphql
+input AddPlayerToGame {
+  gameId: ID!
+  playerName: String!
+}
+
+input SubmitAnswer {
+  gameId: ID!
+  playerId: ID!
+  questionId: ID!
+  answer: String!
+}
+
 type Mutation {
   createGame: Game
-  addPlayerToGame(id: ID!, name: String!): Player!
+  addPlayerToGame(input: AddPlayerToGame): Player!
   startGame(id: ID!): Game
-  submitAnswer(
-    gameId: ID!
-    playerId: ID!
-    questionId: ID!
-    answer: String!
-  ): Player
+  submitAnswer(input: SubmitAnswer): Player
 }
 
 schema {
@@ -26,6 +33,8 @@ schema {
   mutation: Mutation
 }
 ```
+
+Here we've added two `input` types to the schema, which are a good way to roll up multiple arguments to a mutation into a single argument that you pass in (side note, you can use `input` types with queries, as well as mutations).
 
 Now when we generate our types, they'll be available on our resolvers:
 
@@ -81,9 +90,9 @@ const resolvers: Resolvers = {
       return game;
     },
   },
-  async addPlayerToGame(_, { id, name }, { dataSources }) {
-    const user = await dataSources.user.createUser(name);
-    const game = await dataSources.game.getGame(id);
+  async addPlayerToGame(_, { input: { gameId, playerName } }, { dataSources }) {
+    const user = await dataSources.user.createUser(playerName);
+    const game = await dataSources.game.getGame(gameId);
     game.players.push(user);
     await dataSources.game.updateGame(game);
 

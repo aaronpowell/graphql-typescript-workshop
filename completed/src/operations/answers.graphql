@@ -1,15 +1,5 @@
-mutation submitAnswer(
-  $gameId: ID!
-  $playerId: ID!
-  $questionId: ID!
-  $answer: String!
-) {
-  submitAnswer(
-    gameId: $gameId
-    playerId: $playerId
-    questionId: $questionId
-    answer: $answer
-  ) {
+mutation submitAnswer($input: SubmitAnswer) {
+  submitAnswer(input: $input) {
     id
   }
 }

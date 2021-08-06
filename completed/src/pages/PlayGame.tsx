@@ -15,9 +15,8 @@ const PlayGame: React.FC = () => {
     answers: string[];
     id: string;
   }>();
-  const [submitAnswer, { loading: mutationLoading }] = useMutation(
-    SubmitAnswerDocument
-  );
+  const [submitAnswer, { loading: mutationLoading }] =
+    useMutation(SubmitAnswerDocument);
   const [questions, setQuestions] = useState<
     Pick<Question, "id" | "question" | "answers">[]
   >([]);
@@ -59,10 +58,7 @@ const PlayGame: React.FC = () => {
     if (timeRemaining === 0 && question) {
       submitAnswer({
         variables: {
-          gameId: id,
-          playerId,
-          questionId: question.id,
-          answer,
+          input: { gameId: id, playerId, questionId: question.id, answer },
         },
       });
     }

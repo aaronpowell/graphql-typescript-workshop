@@ -71,9 +71,13 @@ const resolvers: Resolvers = {
 
       return game;
     },
-    async addPlayerToGame(_, { id, name }, { dataSources }) {
-      const user = await dataSources.user.createUser(name);
-      const game = await dataSources.game.getGame(id);
+    async addPlayerToGame(
+      _,
+      { input: { gameId, playerName } },
+      { dataSources }
+    ) {
+      const user = await dataSources.user.createUser(playerName);
+      const game = await dataSources.game.getGame(gameId);
       game.players.push(user);
       await dataSources.game.updateGame(game);
 
@@ -86,7 +90,7 @@ const resolvers: Resolvers = {
     },
     async submitAnswer(
       _,
-      { answer, gameId, playerId, questionId },
+      { input: { answer, gameId, playerId, questionId } },
       { dataSources }
     ) {
       const [game, user, question] = await Promise.all([
