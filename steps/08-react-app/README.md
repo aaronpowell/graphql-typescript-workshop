@@ -52,7 +52,7 @@ The code generator we introduced has a plugin that we can use to generate a `Typ
 
 ```bash
 $> cd api
-$> npm install --save-dev @graphql-codegen/typed-document-node
+$> npm install --save-dev @graphql-codegen/typed-document-node @graphql-codegen/typescript-operations
 ```
 
 Next, we'll open `api/config.yml`, add a location for the operations and an output target:
@@ -77,11 +77,7 @@ generates:
     plugins:
       - "introspection"
 
-  ../src/generated.tsx:
-    config:
-      withHooks: true
-      withHOC: false
-      withComponent: false
+  ../src/generated.ts:
     plugins:
       - "typescript"
       - "typescript-operations"

@@ -16,11 +16,7 @@ generates:
     plugins:
       - "introspection"
 
-  ../src/generated.tsx:
-    config:
-      withHooks: true
-      withHOC: false
-      withComponent: false
+  ../src/generated.ts:
     plugins:
       - "typescript"
       - "typescript-operations"
