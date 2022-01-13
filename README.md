@@ -2,7 +2,7 @@
 
 This repository contains the exercises for my [Type-safe GraphQL apps with TypeScript](https://www.aaron-powell.com/talks/type-safe-graphql-apps-with-typescript-workshop/) workshop. You can watch the recording of the workshop from TSConf 2021 [on YouTube](https://www.youtube.com/watch?v=s2tUrLLdrT8).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s2tUrLLdrT8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Watch the workshop recording](https://img.youtube.com/vi/s2tUrLLdrT8/0.jpg)](https://www.youtube.com/watch?v=s2tUrLLdrT8)
 
 ## Undertaking the workshop
 
