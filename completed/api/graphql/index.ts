@@ -3,7 +3,6 @@ import { loadSchemaSync } from "@graphql-tools/load";
 import { addResolversToSchema } from "@graphql-tools/schema";
 import { ApolloServer } from "apollo-server-azure-functions";
 import { join } from "path";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { cosmosDataSources, inMemoryDataSources } from "./data/index";
 import resolvers from "./resolvers";
 
@@ -16,7 +15,7 @@ const schema = loadSchemaSync(
 
 const server = new ApolloServer({
   schema: addResolversToSchema({ schema, resolvers }),
-  dataSources: cosmosDataSources,
+  dataSources: process.env.CosmosDB ? cosmosDataSources : inMemoryDataSources,
   context: {},
 });
 

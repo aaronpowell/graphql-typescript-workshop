@@ -4,7 +4,6 @@ import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import { addResolversToSchema } from "@graphql-tools/schema";
 import { join } from "path";
 import resolvers from "./resolvers";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { cosmosDataSources, inMemoryDataSources } from "./data/index";
 
 const schema = loadSchemaSync(
@@ -16,7 +15,7 @@ const schema = loadSchemaSync(
 const server = new ApolloServer({
   schema: addResolversToSchema({ schema, resolvers }),
   resolvers,
-  dataSources: inMemoryDataSources,
+  dataSources: process.env.CosmosDB ? cosmosDataSources : inMemoryDataSources,
   context: {},
 });
 
