@@ -20,7 +20,7 @@ services:
 
     network_mode: service:cosmos
   cosmos:
-    container_name: cosmos-e2e-graphql
+    container_name: graphql-ts-cosmos-step5
     image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest
     mem_limit: 3g
     cpu_count: 2

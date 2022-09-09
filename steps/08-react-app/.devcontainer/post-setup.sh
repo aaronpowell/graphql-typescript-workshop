@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-ipAddress=https://$(docker inspect cosmos-e2e-graphql -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'):8081
+ipAddress=https://$(docker inspect graphql-ts-cosmos-step8 -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'):8081
 
 # Try to get the emulator cert in a loop
 until sudo curl -ksf "${ipAddress}/_explorer/emulator.pem" -o '/usr/local/share/ca-certificates/emulator.crt'; do
