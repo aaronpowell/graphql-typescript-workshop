@@ -14,4 +14,6 @@ sudo update-ca-certificates
 
 if [ ! -f ./api/local.settings.json ]; then
   echo "{ \"IsEncrypted\": false, \"Values\": { \"FUNCTIONS_WORKER_RUNTIME\": \"node\", \"CosmosDB\": \"AccountEndpoint=$ipAddress/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==\" } }" >> ./api/local.settings.json
+else
+  echo "AccountEndpoint=$ipAddress/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=="
 fi
